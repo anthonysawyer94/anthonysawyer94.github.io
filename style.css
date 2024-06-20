@@ -1,3 +1,5 @@
+/* Notes */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,6 +23,7 @@ nav {
     font-style: italic;
     font-weight: bold;
     padding: 0rem;
+    margin-left: 0.5rem;
 
 }
 
@@ -54,6 +57,7 @@ nav a:hover {
     align-items: flex-start;
     color: #000;
     padding: 0rem;
+    margin: auto;
 
 }
 
@@ -76,7 +80,8 @@ button {
     color: #BBC4C6;
     background: #000;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 25px;
+    margin: auto;
 
 }
 
@@ -94,6 +99,12 @@ button:hover {
         padding: 0rem 2rem;
 }
 
+.column-right h2{
+    margin: auto;
+    font-size: 12;
+
+}
+
 .image1 {
     width: 400px;
     height: 300px;
@@ -103,5 +114,7 @@ button:hover {
 .imageant {
     width: 400px;
     height: 300px;
+    border-radius: 25px;
+    margin: auto;
 
 }
