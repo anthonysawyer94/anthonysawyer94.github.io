@@ -121,3 +121,10 @@ button:hover {
     height: 300px;
 
 }
+
+.imageant {
+    width: 400px;
+    height: 300px;
+    border-radius: 25px;
+    margin: auto;
+}
