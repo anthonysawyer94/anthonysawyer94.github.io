@@ -1,0 +1,12 @@
+{
+  "name": "anthonysawyer94.github.io",
+  "version": "1.0.0",
+  "description": "This is my first website that I made with the help of Brian Design on YouTube. He is a great teacher and I followed along using this video: https://youtu.be/VegDvRLVlOI?si=8tqoHU-JEr-MhLQ3. I also had the help of SuperSimpleDev on YouTube to help create a github account and add my files in here. The follwing video helped me: https://youtu.be/p1QU3kLFPdg?si=3tpUkhEsDMZibE-Q.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
