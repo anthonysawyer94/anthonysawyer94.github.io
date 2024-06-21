@@ -50,6 +50,15 @@ nav a:hover {
     padding: 0rem calc(100vw - 1300px) / 2;
 }
 
+.hero-container-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .column-left {
     display: flex;
     flex-direction: column;
@@ -110,13 +119,5 @@ button:hover {
 .image1 {
     width: 400px;
     height: 300px;
-
-}
-
-.imageant {
-    width: 400px;
-    height: 300px;
-    border-radius: 25px;
-    margin: auto;
 
 }
