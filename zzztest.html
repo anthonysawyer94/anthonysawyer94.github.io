@@ -3,69 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel</title>
-    <style>
-        .carousel-container {
-            position: relative;
-            width: 300px; /* Adjust as needed */
-            margin: auto;
-        }
-
-        .carousel-image {
-            display: none;
-            width: 100%;
-            height: auto;
-        }
-
-        .carousel-image.active {
-            display: block;
-        }
-
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .carousel-button.prev {
-            left: 0;
-        }
-
-        .carousel-button.next {
-            right: 0;
-        }
-    </style>
+    <title>Dropdown Menu</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div class="column-left">
-        <h1>Hi, I'm Anthony</h1>
-        <div class="carousel-container">
-            <img src="pictures/tenerifeselfie.png" alt="photo of Anthony 1" class="carousel-image">
-            <img src="pictures/pool.JPG" alt="photo of Anthony 2" class="carousel-image">
-            <img src="pictures/drone1.png" alt="photo of Anthony 3" class="carousel-image">
-            <button class="carousel-button prev" onclick="changeImage(-1)">&#10094;</button>
-            <button class="carousel-button next" onclick="changeImage(1)">&#10095;</button>
+    <nav>
+        <div class="logo">Anthony Sawyer</div>
+        <div class="nav-items">
+            <a href="./">Home</a>
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Projects</a>
+                <div class="dropdown-content">
+                    <a href="./project1.html">Project 1</a>
+                    <a href="./project2.html">Project 2</a>
+                    <a href="./project3.html">Project 3</a>
+                </div>
+            </div>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
         </div>
-        <p>Browse around and look at projects I have done.</p>
-        <a href="./myprojects.html">
-          <button id="projects">My Projects</button>
-        </a>
-    </div>
-
-    <script>
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-image');
-
-        function changeImage(direction) {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + direction + images.length) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-    </script>
+    </nav>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

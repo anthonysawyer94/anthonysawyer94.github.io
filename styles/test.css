@@ -1,0 +1,31 @@
+/* Add this to your existing styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+nav .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .nav-items {
+    display: flex;
+    gap: 15px;
+}
+
+nav .nav-items a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav .nav-items a:hover {
+    background-color: #575757;
+    border-radius: 5px
+}
