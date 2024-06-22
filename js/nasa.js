@@ -1,8 +1,8 @@
 //const dotenv = require('dotenv');
 //const KEY = process.env.API_KEY
-//const api = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=SAxJ4hiPTsWdLwsX2lN0FsRfNTvtwCFOfWzMF2Lp`;
+const api = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${process.env.API_KEY}`;
 
-const api = 'http://localhost:3000/api/data';
+//const api = 'http://localhost:3000/api/data';
 
 async function fetchData() {
     try {
