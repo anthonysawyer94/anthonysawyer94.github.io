@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anthony Sawyer</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/youtube.css" />
+    <link rel="stylesheet" href="styles/videowheel.css">
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -12,16 +13,30 @@
       <div class="logo">Anthony Sawyer</div>
       <div class="nav-items">
         <a href="./">Home</a>
-        <a href="myprojects">Projects</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
+        <a href="myprojects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
     <section class="hero"></section>
     <div class="hero-container">
-      <div class="column-left">
-        <h1>My Youtube Videos</h1>
-        <iframe width="600" height="260" src="https://www.youtube.com/embed/4fl4BVZYaHM?si=BfRi3oo6aWCtIQLG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="title">
+        <h5 id="yt">My YouTube Videos</h5>
+      </div>
+      <div class="video-wheel">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/4fl4BVZYaHM?si=BfRi3oo6aWCtIQLG" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/n1_QAfd3iWA" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/b_Wgr3z5jiE" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/jGlGfSUZvs4" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
+    <script src="js/videowheel.js"></script>
   </body>
 </html>
