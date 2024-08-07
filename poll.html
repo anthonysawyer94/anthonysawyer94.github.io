@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poll</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+    <nav>
+        <div>
+          <a href="./" class="logo">Anthony Sawyer</a>
+        </div>
+        <div class="nav-items">
+          <a href="./">Home</a>
+          <a href="myprojects.html">Projects</a>
+          <a href="youtube.html">Videos</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <h1>Poll</h1>
+    <form id="poll-form">
+        <label for="choice">What is your favorite color?</label><br>
+        <input type="radio" name="choice" value="Red"> Red<br>
+        <input type="radio" name="choice" value="Blue"> Blue<br>
+        <input type="radio" name="choice" value="Green"> Green<br>
+        <button type="submit">Submit</button>
+    </form>
+    <form id="man">
+        <label for="choice">ARE YOU A MAN?</label>
+        <input type="radio" name="man" value="yes">yes
+        <input type="radio" name="man" value="no">no
+        <button id="sub">Submit</button>
+    </form>
+
+    <h2>Results:</h2>
+    <div id="results"></div>
+
+    <script>
+        document.getElementById('man').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const choice = document.querySelector('input[name="man"]:checked').value;
+            console.log('Clicked', choice)
+            fetch('http://172.31.29.44:5000/man', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ man: choice })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+        
+
+    </script>
+
+
+    <script>
+        document.getElementById('poll-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const choice = document.querySelector('input[name="choice"]:checked').value;
+            console.log('Clicked', choice)
+
+            fetch('http://172.31.29.44:5000/poll', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ choice: choice })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                fetchResults();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+
+        function fetchResults() {
+            fetch('http://172.31.29.44:5000/results')
+            .then(response => response.json())
+            .then(data => {
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '';
+                data.forEach(result => {
+                    resultsDiv.innerHTML += `<p>${result.choice}: ${result.votes} votes</p>`;
+                });
+            });
+        }
+
+        // Fetch results when the page loads
+        fetchResults();
+    </script>
+</body>
+</html>
