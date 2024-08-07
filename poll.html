@@ -40,7 +40,7 @@
             event.preventDefault();
             const choice = document.querySelector('input[name="man"]:checked').value;
             console.log('Clicked', choice)
-            fetch('http://172.31.29.44:5000/man', {
+            fetch('https://172.31.29.44:5000/man', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -66,7 +66,7 @@
             const choice = document.querySelector('input[name="choice"]:checked').value;
             console.log('Clicked', choice)
 
-            fetch('http://172.31.29.44:5000/poll', {
+            fetch('https://172.31.29.44:5000/poll', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -84,7 +84,7 @@
         });
 
         function fetchResults() {
-            fetch('http://172.31.29.44:5000/results')
+            fetch('https://172.31.29.44:5000/results')
             .then(response => response.json())
             .then(data => {
                 const resultsDiv = document.getElementById('results');
