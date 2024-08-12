@@ -5,8 +5,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .back-button {
@@ -37,40 +39,47 @@ body {
 
 .game-container {
     text-align: center;
+    width: 100%;
 }
 
 h1 {
     color: #776e65;
-    font-size: 2em;
+    font-size: 1.8em;
+    margin: 10px 0;
 }
 
 #score {
     margin: 20px;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #776e65;
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 20px auto;
     background-color: #bbada0;
     padding: 10px;
     border-radius: 10px;
+    width: 100%;
+    max-width: 340px; /* Adjusted max-width */
+    box-sizing: border-box;
 }
 
 .tile {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.5em;
     border-radius: 5px;
-    height: 100px;
-    width: 100px;
+    padding: 10px;
     background-color: #ccc0b3;
     color: #fff;
+    aspect-ratio: 1; /* Ensures square tiles */
+    width: 100%;
+    max-width: 80px; /* Adjusted max-width */
+    box-sizing: border-box;
 }
 
 .tile-2 { background-color: #eee4da; color: #776e65; }
@@ -98,6 +107,9 @@ button {
     border-radius: 5px;
     background-color: #333;
     color: #fff;
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
 }
 
 #status {
@@ -126,12 +138,13 @@ button {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 400px;
     color: #000;
     border-radius: 10px;
     text-align: left;
     position: relative;
+    box-sizing: border-box;
 }
 
 .close-button {

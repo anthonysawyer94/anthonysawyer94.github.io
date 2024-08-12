@@ -159,3 +159,74 @@ initializeBoard();
 function goBack() {
     window.location.href = 'games.html';
 }
+
+// Swipe functionality for touch devices
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+let xDown = null;
+let yDown = null;
+
+function getTouches(evt) {
+    return evt.touches || evt.originalEvent.touches;
+}
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    const xUp = evt.touches[0].clientX;
+    const yUp = evt.touches[0].clientY;
+
+    const xDiff = xDown - xUp;
+    const yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0) {
+            // Swipe left
+            handleMove('ArrowLeft');
+        } else {
+            // Swipe right
+            handleMove('ArrowRight');
+        }
+    } else {
+        if (yDiff > 0) {
+            // Swipe up
+            handleMove('ArrowUp');
+        } else {
+            // Swipe down
+            handleMove('ArrowDown');
+        }
+    }
+
+    // Reset values
+    xDown = null;
+    yDown = null;
+}
+
+function handleMove(direction) {
+    switch (direction) {
+        case 'ArrowUp':
+            slideTiles('up');
+            break;
+        case 'ArrowDown':
+            slideTiles('down');
+            break;
+        case 'ArrowLeft':
+            slideTiles('left');
+            break;
+        case 'ArrowRight':
+            slideTiles('right');
+            break;
+    }
+    addRandomTile();  // Add a random tile after each move
+    updateBoard();    // Update the board display
+    checkGameOver();  // Check if the game is over
+}
