@@ -1,5 +1,7 @@
 /* General Styles */
 body {
+    overflow: hidden; /* Prevents the screen from scrolling */
+    touch-action: none; /* Disables the default touch scrolling */
     font-family: Arial, sans-serif;
     background-color: #faf8ef;
     display: flex;
@@ -9,6 +11,10 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensures the body takes up the full height of the screen */
 }
 
 .back-button {
