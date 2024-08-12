@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="styles/2048.css">
+</head>
+<body>
+    <div class="back-button" onclick="goBack()">
+        <div class="arrow">&#8592;</div>
+    </div>
+    
+    <div class="game-container">
+        <h1>2048 Game</h1>
+        <div id="score">Score: 0</div>
+        <div id="board" class="board"></div>
+        <div class="controls">
+            <button onclick="restartGame()">Restart</button>
+            <button onclick="showInstructions()">Instructions</button>
+        </div>
+        <div id="status"></div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeInstructions()">&times;</span>
+            <h2>Instructions</h2>
+            <p>Use the arrow keys to move the tiles. Merge matching tiles to create new tiles with higher values. Reach 2048 to win!</p>
+        </div>
+    </div>
+
+    <script src="js/2048.js"></script>
+</body>
+</html>

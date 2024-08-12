@@ -131,3 +131,10 @@ button:hover {
     border-radius: 25px;
     margin: auto;
 }
+
+.flex-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

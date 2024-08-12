@@ -4,6 +4,12 @@ fetch(url)
     .then(response => response.json())
     .then(data => {
 
-        console.log(data);
+        nbaData = data.resultSet.rowSet;
+        nbaData.forEach(player => {
+
+            console.log(player[2]);
+        })
+
+        console.log(nbaData);
 
     })

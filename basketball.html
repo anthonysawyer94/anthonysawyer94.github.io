@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Game</title>
+    <link rel="stylesheet" href="styles/basketball.css">
+</head>
+<body>
+    <div class="back-button" onclick="goBack()">
+        <div class="arrow">&#8592;</div>
+    </div>
+    <div class="game-container">
+        <h1>Basketball Game</h1>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="score">Score: 0</div>
+        <button onclick="restartGame()">Restart</button>
+        <div id="instructionsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeInstructions()">&times;</span>
+                <h2>Instructions</h2>
+                <p>Use the space bar to shoot the basketball. Try to score as many points as possible!</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/basketball.js"></script>
+</body>
+</html>
