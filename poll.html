@@ -1,102 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Poll</title>
+    <title>Name Entry</title>
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
     <nav>
         <div>
-          <a href="./" class="logo">Anthony Sawyer</a>
+            <a href="./" class="logo">Anthony Sawyer</a>
         </div>
         <div class="nav-items">
-          <a href="./">Home</a>
-          <a href="myprojects.html">Projects</a>
-          <a href="youtube.html">Videos</a>
-          <a href="about.html">About</a>
-          <a href="games.html">Games</a>
+            <a href="./">Home</a>
+            <a href="myprojects.html">Projects</a>
+            <a href="youtube.html">Videos</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games</a>
         </div>
     </nav>
-    <h1>Poll</h1>
-    <form id="poll-form">
-        <label for="choice">What is your favorite color?</label><br>
-        <input type="radio" name="choice" value="Red"> Red<br>
-        <input type="radio" name="choice" value="Blue"> Blue<br>
-        <input type="radio" name="choice" value="Green"> Green<br>
+    <h1>Submit Your Name</h1>
+    <form id="name-form">
+        <label for="name">What is your name?</label><br>
+        <input type="text" id="name" name="name" required><br>
         <button type="submit">Submit</button>
     </form>
-    <form id="man">
-        <label for="choice">ARE YOU A MAN?</label>
-        <input type="radio" name="man" value="yes">yes
-        <input type="radio" name="man" value="no">no
-        <button id="sub">Submit</button>
-    </form>
 
-    <h2>Results:</h2>
-    <div id="results"></div>
+    <h2>Response:</h2>
+    <div id="response"></div>
 
     <script>
-        document.getElementById('man').addEventListener('submit', function(event) {
+        document.getElementById('name-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            const choice = document.querySelector('input[name="man"]:checked').value;
-            console.log('Clicked', choice)
-            fetch('https://172.31.29.44:5000/man', {
+            const name = document.getElementById('name').value;
+            console.log('Name:', name);
+
+            fetch('http://54.221.36.148:5000/submit-name', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ man: choice })
+                body: JSON.stringify({ name: name })
             })
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                document.getElementById('response').innerText = 'Data submitted successfully!';
             })
             .catch((error) => {
                 console.error('Error:', error);
+                document.getElementById('response').innerText = 'Error submitting data.';
             });
         });
-        
-
-    </script>
-
-
-    <script>
-        document.getElementById('poll-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const choice = document.querySelector('input[name="choice"]:checked').value;
-            console.log('Clicked', choice)
-
-            fetch('https://172.31.29.44:5000/poll', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ choice: choice })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                fetchResults();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        });
-
-        function fetchResults() {
-            fetch('https://172.31.29.44:5000/results')
-            .then(response => response.json())
-            .then(data => {
-                const resultsDiv = document.getElementById('results');
-                resultsDiv.innerHTML = '';
-                data.forEach(result => {
-                    resultsDiv.innerHTML += `<p>${result.choice}: ${result.votes} votes</p>`;
-                });
-            });
-        }
-
-        // Fetch results when the page loads
-        fetchResults();
     </script>
 </body>
 </html>
