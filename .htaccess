@@ -14,6 +14,7 @@ RewriteRule ^tictactoe$ /tictactoe.html [L]
 RewriteRule ^2048$ /2048.html [L]
 RewriteRule ^basketball$ /basketball.html [L]
 RewriteRule ^rock-paper-scissors$ /rock-paper-scissors.html [L]
+RewriteRule ^nba-viz$ /nba-viz.html [L]
 
 # Block access to /secret-folder
 #<Directory "/var/www/html/server">

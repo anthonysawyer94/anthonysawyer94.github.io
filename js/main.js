@@ -5,10 +5,10 @@ fetch(url)
     .then(data => {
 
         nbaData = data.resultSet.rowSet;
-        nbaData.forEach(player => {
+        //nbaData.forEach(player => {
 
             //console.log(player[2]);
-        })
+        //})
 
         console.log('NBA Scoring Leaders', nbaData);
 

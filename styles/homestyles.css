@@ -26,35 +26,6 @@
     left: 0; /* Align left */
 }
 
-nav {
-    height: 80;
-    background: #BBC4C6;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0rem calc(100vw - 1300px) / 2;
-}
-
-.logo {
-    color: #000;
-    font-size: 1.5rem ;
-    font-style: italic;
-    font-weight: bold;
-    padding: 0rem;
-    margin-left: 0.5rem;
-
-}
-
-nav a {
-    text-decoration: none;
-    color:#000;
-    padding: 0 1.5rem;
-
-}
-
-nav a:hover {
-    color: #fff;
-}
 
 .hero {
     background: #BBC4C6;
@@ -161,3 +132,42 @@ button:hover {
 .imageant p {
     text-align: center;
 }
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown button (Projects link) */
+  .dropbtn {
+    cursor: pointer;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #BBC4C6;
+    min-width: 115px;
+    box-shadow: 0px 8px 16px #000000;
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Show the dropdown on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change color on hover */
+  .dropdown-content a:hover {
+    background-color: #f1f1f11b;
+  }
