@@ -2,15 +2,21 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L,QSA]
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9} /.*.html HTTP/
-RewriteRule ^(.*).html$ /$1 [R=301,L]
+#RewriteRule ^(.+)$ $1.html [L,QSA]
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9} /.*.html HTTP/
+#RewriteRule ^(.*).html$ /$1 [R=301,L]
 RewriteRule ^contact$ /contact.html [L]
 RewriteRule ^about$ /about.html [L]
-RewriteRule ^projects$ /myprojects.html [L]
+RewriteRule ^myprojects$ /myprojects.html [L]
 RewriteRule ^youtube$ /youtube.html [L]
 RewriteRule ^games$ /games.html [L]
 RewriteRule ^tictactoe$ /tictactoe.html [L]
 RewriteRule ^2048$ /2048.html [L]
 RewriteRule ^basketball$ /basketball.html [L]
 RewriteRule ^rock-paper-scissors$ /rock-paper-scissors.html [L]
+
+# Block access to /secret-folder
+#<Directory "/var/www/html/server">
+#    Order allow,deny
+#    Deny from all
+#</Directory>
