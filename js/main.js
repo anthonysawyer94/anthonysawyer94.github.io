@@ -7,9 +7,9 @@ fetch(url)
         nbaData = data.resultSet.rowSet;
         nbaData.forEach(player => {
 
-            console.log(player[2]);
+            //console.log(player[2]);
         })
 
-        console.log(nbaData);
+        console.log('NBA Scoring Leaders', nbaData);
 
     })
