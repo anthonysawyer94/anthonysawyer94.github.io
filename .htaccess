@@ -20,5 +20,3 @@ RewriteRule ^rock-paper-scissors$ /rock-paper-scissors.html [L]
 #    Order allow,deny
 #    Deny from all
 #</Directory>
-
-# did this work?
