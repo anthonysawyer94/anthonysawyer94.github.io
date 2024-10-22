@@ -46,7 +46,7 @@
       </div>
       <script>
         // Call the API on your server to get the data (this request will not expose the API key)
-        fetch('https://54.82.51.255:5001/api/get-key')
+        fetch('https://54.82.51.255:5000/api/get-key')
             .then(response => response.json())
             .then(data => {
                 console.log("API Key:", data.api_key);
