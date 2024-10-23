@@ -16,16 +16,16 @@ RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.php\ HTTP/
 RewriteRule ^(.*)\.php$ /$1 [R=301,L]
 
 # Example: Block access to weather.php, allow only from your domain
-<Files "weather.php">
-    Order Deny,Allow
-    Deny from all
-    Allow from anthonyjsawyer.com
-</Files>
+#<Files "weather.php">
+#    Order Deny,Allow
+#    Deny from all
+#    Allow from anthonyjsawyer.com
+#</Files>
 
 <Files ".htaccess">
     Require all denied
 </Files>
 
-<FilesMatch "\.php$">
-    Require all denied
-</FilesMatch>
+#<FilesMatch "\.php$">
+#    Require all denied
+#</FilesMatch>
