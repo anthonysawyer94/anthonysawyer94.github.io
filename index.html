@@ -35,16 +35,12 @@
         </div>
       </div>
       <script>
-        // Call the API on your server to get the data (this request will not expose the API key)
-        fetch('https://54.82.51.255:5000/api/get-key')
-            .then(response => response.json())
-            .then(data => {
-                console.log("API Key:", data.api_key);
-                // Use the API key in the frontend app as needed
-            })
-            .catch(error => {
-                console.error("Error fetching API key:", error);
-            });
+      fetch('weather.php?city=London')
+          .then(response => response.json())
+          .then(data => {
+            console.log('london', data); // This is the weather data
+          })
+          .catch(error => console.error('Error:', error));
         </script>
     
   </body>
