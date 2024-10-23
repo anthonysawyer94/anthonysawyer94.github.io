@@ -55,11 +55,11 @@
                 let city = data.name;
                 weather = Math.round(((weather -273.15) * (9 / 5)) + 32);
                 console.log(`Current Weather in ${city}: ${weather} °F`);
-                //const targetDiv = document.querySelector('.column-left');
-                //console.log(targetDiv);
-                //const p = document.createElement('p');
-                //targetDiv.appendChild(p);
-                //p.innerText = `Current Weather in ${city}: ${weather} °F`;
+                const targetDiv = document.querySelector('.column-left');
+                console.log(targetDiv);
+                const p = document.createElement('p');
+                targetDiv.appendChild(p);
+                p.innerText = `Current Weather in ${city}: ${weather} °F`;
               })
               .catch(error => console.error('Error:', error));
         }
