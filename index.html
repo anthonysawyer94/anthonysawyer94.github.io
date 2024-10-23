@@ -51,8 +51,8 @@
               .then(res => res.json())
               .then(data => {
                 console.log("Current Location", data); // This is the weather data
-                let weather = data[0].main.temp;
-                let city = data[0].name;
+                let weather = data.main.temp;
+                let city = data.name;
                 weather = Math.round(((weather -273.15) * (9 / 5)) + 32);
                 console.log(`Current Weather in ${city}: ${weather} °F`);
                 //const targetDiv = document.querySelector('.column-left');
