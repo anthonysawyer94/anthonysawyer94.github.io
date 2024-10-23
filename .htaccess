@@ -1,36 +1,29 @@
-RewriteEngine on
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-#RewriteCond %{REQUEST_FILENAME}.html -f
-#RewriteRule ^(.+)$ $1.html [L,QSA]
-#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9} /.*.html HTTP/
-#RewriteRule ^(.*).html$ /$1 [R=301,L]
-RewriteRule ^contact$ /contact.html [L]
-RewriteRule ^about$ /about.html [L]
-RewriteRule ^myprojects$ /myprojects.html [L]
-RewriteRule ^youtube$ /youtube.html [L]
-RewriteRule ^games$ /games.html [L]
-RewriteRule ^tictactoe$ /tictactoe.html [L]
-RewriteRule ^2048$ /2048.html [L]
-RewriteRule ^basketball$ /basketball.html [L]
-RewriteRule ^rock-paper-scissors$ /rock-paper-scissors.html [L]
-RewriteRule ^nba-viz$ /nba-viz.html [L]
+RewriteEngine On
 
-# Block access to /secret-folder
-#<Directory "/var/www/html/server">
-#    Order allow,deny
-#    Deny from all
-#</Directory>
+# Handle .html files
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
 
+# Handle .php files
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)$ $1.php [L]
+
+# Redirect requests with .html or .php in URL to clean URL
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.php\ HTTP/
+RewriteRule ^(.*)\.php$ /$1 [R=301,L]
+
+# Example: Block access to weather.php, allow only from your domain
 <Files "weather.php">
-  # Allow access only from your domain
-  Order Deny,Allow
-  Deny from all
-  Allow from anthonyjsawyer.com
+    Order Deny,Allow
+    Deny from all
+    Allow from anthonyjsawyer.com
 </Files>
 
 <Files ".htaccess">
-  Require all denied
+    Require all denied
 </Files>
 
 <FilesMatch "\.php$">
