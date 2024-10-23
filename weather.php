@@ -1,12 +1,12 @@
 <?php
 
 // Allow requests only from your website
-if (strpos($_SERVER['HTTP_REFERER'], 'https://anthonyjsawyer.com') === false) {
-    die('Unauthorized access');
-}
+//if (strpos($_SERVER['HTTP_REFERER'], 'https://anthonyjsawyer.com') === false) {
+//    die('Unauthorized access');
+//}
 
 // Your OpenWeather API Key
-$apiKey = getenv('OPENWEATHER_API_KEY'); // Load from environment variable
+$apiKey = '186fce6232608c1c135ee734a641feb9';
 
 // The city or location to get the weather for (sent from the frontend)
 $city = $_GET['city'] ?? null;
