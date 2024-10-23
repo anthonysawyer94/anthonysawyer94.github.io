@@ -21,3 +21,14 @@ RewriteRule ^nba-viz$ /nba-viz.html [L]
 #    Order allow,deny
 #    Deny from all
 #</Directory>
+
+<Files "weather.php">
+  # Allow access only from your domain
+  Order Deny,Allow
+  Deny from all
+  Allow from anthonyjsawyer.com
+</Files>
+
+<Files ".htaccess">
+  Require all denied
+</Files>
