@@ -1,6 +1,7 @@
 let board;
 let boardSize = 4;
 let score = 0;
+let isGameActive = true; // Variable to track the game state
 
 function initializeBoard() {
     board = Array.from({ length: boardSize }, () => Array(boardSize).fill(null));
@@ -112,7 +113,6 @@ function restartGame() {
 
 function checkGameOver() {
     let gameOver = true;
-    let isGameActive = true;
 
     for (let r = 0; r < boardSize; r++) {
         for (let c = 0; c < boardSize; c++) {
