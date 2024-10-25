@@ -38,6 +38,8 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $scores[] = $row;
     }
+} else {
+    echo "No rows bro";
 }
 
 // Return the scores as JSON
