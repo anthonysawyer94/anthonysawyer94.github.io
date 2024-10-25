@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 // Database connection parameters
 $host = 'database-1.c7c8se6ww0t2.us-east-1.rds.amazonaws.com';
-$dbname = 'database-1';
+$dbname = 'TestDatabase';
 $username = 'admin';
 $password = 'DPIsackings!1';
 
