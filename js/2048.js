@@ -140,7 +140,7 @@ function checkGameOver() {
         // Send the POST request to your PHP script
         fetch('2048-hi-score', {
             method: 'POST',
-            body: data,
+            body: JSON.stringify(data),
         })
         .then(response => response.text())
         .then(data => {
