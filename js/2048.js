@@ -158,6 +158,7 @@ function checkGameOver() {
             .catch(error => console.error('Error:', error));
 
             isGameActive = false; // Set the game state to inactive
+            fetchHighScores();
         }
     } else {
         document.getElementById('status').textContent = '';
@@ -259,3 +260,26 @@ function handleMove(direction) {
     updateBoard();    // Update the board display
     checkGameOver();  // Check if the game is over
 }
+
+// Function to fetch high scores
+function fetchHighScores() {
+    fetch('2048-hi-score')
+        .then(response => response.json())
+        .then(data => {
+            const scoresBody = document.getElementById('scoresBody');
+            scoresBody.innerHTML = ''; // Clear existing scores
+
+            data.forEach((scoreEntry, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${scoreEntry.player}</td>
+                    <td>${scoreEntry.score}</td>
+                `;
+                scoresBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching high scores:', error));
+}
+
+
