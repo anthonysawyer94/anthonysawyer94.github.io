@@ -27,7 +27,7 @@ if (!$latitude || !$longitude) {
 }
 
 // The OpenWeather API URL
-$apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat={$latitude}&lon={$longitude}&appid={$apiKey}";
+$apiUrl = "https://api.openweathermap.org/data/2.5/api/weather?lat={$latitude}&lon={$longitude}&appid={$apiKey}";
 
 // Make the API request and handle errors
 $weatherData = @file_get_contents($apiUrl);
