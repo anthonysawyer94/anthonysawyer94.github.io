@@ -1,4 +1,10 @@
 <?php
+
+//Error Messages if needed
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Database connection parameters
 $host = 'database-1.c7c8se6ww0t2.us-east-1.rds.amazonaws.com';
 $dbname = 'website';
