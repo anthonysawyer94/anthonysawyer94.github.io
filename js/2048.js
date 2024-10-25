@@ -131,31 +131,33 @@ function checkGameOver() {
     }
 
     if (gameOver) {
-        const playerName = prompt("Enter your name to join LeaderBoard!");
-        document.getElementById('status').textContent = 'Game Over!';
-        const hiTable = document.getElementById('highScoresTable');
-        hiTable.style.display = 'flex'; 
-        const data = {
-            player: playerName,
-            score: score
+        if (isGameActive) { // Check if the game is still active
+            const playerName = prompt("Enter your name to join LeaderBoard!");
+            document.getElementById('status').textContent = 'Game Over!';
+            const hiTable = document.getElementById('highScoresTable');
+            hiTable.style.display = 'flex'; 
+            const data = {
+                player: playerName,
+                score: score
+            }
+
+            // Send the POST request to your PHP script
+            fetch('2048-hi-score', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the response message
+                alert('worked' + JSON.stringify(data));
+            })
+            .catch(error => console.error('Error:', error));
+
+            isGameActive = false; // Set the game state to inactive
         }
-
-        // Send the POST request to your PHP script
-        fetch('2048-hi-score', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Display the response message
-            alert('worked' + JSON.stringify(data));
-        })
-        .catch(error => console.error('Error:', error));
-
-        gameOver = false;
     } else {
         document.getElementById('status').textContent = '';
     }
