@@ -109,6 +109,7 @@ function restartGame() {
     initializeBoard();
     const hiTable = document.getElementById('highScoresTable');
     hiTable.style.display = 'none'; 
+    isGameActive = true;
 }
 
 function checkGameOver() {
@@ -153,7 +154,7 @@ function checkGameOver() {
             .then(response => response.json())
             .then(data => {
                 // Display the response message
-                alert('worked' + JSON.stringify(data));
+                //alert('worked' + JSON.stringify(data));
             })
             .catch(error => console.error('Error:', error));
 
