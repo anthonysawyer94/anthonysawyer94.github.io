@@ -132,6 +132,22 @@ function checkGameOver() {
         document.getElementById('status').textContent = 'Game Over!';
         const hiTable = document.getElementById('highScoresTable');
         hiTable.style.display = 'flex'; 
+        const data = {
+            player: 'Tommy',
+            score: score
+        }
+
+        // Send the POST request to your PHP script
+        fetch('2048-hi-score', {
+            method: 'POST',
+            body: data,
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Display the response message
+            alert('worked', data);
+        })
+        .catch(error => console.error('Error:', error));
 
     } else {
         document.getElementById('status').textContent = '';
