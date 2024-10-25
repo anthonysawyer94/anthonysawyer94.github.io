@@ -42,6 +42,7 @@ if ($result->num_rows > 0) {
     echo "No rows bro";
 }
 
+
 // Return the scores as JSON
 echo json_encode($scores);
 
