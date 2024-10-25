@@ -155,6 +155,7 @@ function checkGameOver() {
         })
         .catch(error => console.error('Error:', error));
 
+        restartGame()
     } else {
         document.getElementById('status').textContent = '';
     }
