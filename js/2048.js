@@ -130,6 +130,9 @@ function checkGameOver() {
 
     if (gameOver) {
         document.getElementById('status').textContent = 'Game Over!';
+        const hiTable = document.getElementById('highScoresTable');
+        hiTable.style.display = 'flex'; 
+
     } else {
         document.getElementById('status').textContent = '';
     }

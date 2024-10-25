@@ -169,3 +169,11 @@ button {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Hide the high scores table initially */
+#highScoresTable {
+    display: none;
+    justify-content: center; /* Adjust as needed */
+    align-items: center; /* Adjust as needed */
+    flex-direction: column; /* Adjust as needed */
+}
