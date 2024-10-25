@@ -18,7 +18,7 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    echo "Connected successfully to the database!<br>"; // Success message
+    //echo "Connected successfully to the database!<br>"; // Success message
 }
 
 // Check if it's a POST request to add a new score
