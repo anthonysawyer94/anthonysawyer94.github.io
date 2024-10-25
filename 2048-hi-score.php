@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Insert the new score into the high_scores table
     $insert_sql = "INSERT INTO hi2024 (player, score) VALUES ('$player', '$score')";
     if ($conn->query($insert_sql) === TRUE) {
-        echo "New score added successfully.<br>";
+        //echo "New score added successfully.<br>";
     } else {
-        echo "Error: " . $insert_sql . "<br>" . $conn->error;
+        //echo "Error: " . $insert_sql . "<br>" . $conn->error;
     }
 }
 
