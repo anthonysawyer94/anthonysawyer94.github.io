@@ -106,6 +106,8 @@ function handleKeyPress(event) {
 
 function restartGame() {
     initializeBoard();
+    const hiTable = document.getElementById('highScoresTable');
+    hiTable.style.display = 'none'; 
 }
 
 function checkGameOver() {
