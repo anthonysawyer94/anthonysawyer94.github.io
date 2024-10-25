@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
 }
 
 // Example: Inserting user data
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     
     $insert_sql = "INSERT INTO poop (name) VALUES ('$name')";
@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error: " . $insert_sql . "<br>" . $conn->error;
     }
 }
+    */
 
 // Close the connection
 $conn->close();
