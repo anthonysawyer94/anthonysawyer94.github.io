@@ -23,8 +23,9 @@ if ($conn->connect_error) {
 
 // Check if it's a POST request to add a new score
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $player = $_POST['player'];
-    $score = $_POST['score'];
+    $data = json_decode(file_get_contents('php://input'), true); // Decode JSON
+    $player = $data['player'];
+    $score = $data['score'];
 
     // Insert the new score into the high_scores table
     $insert_sql = "INSERT INTO hi2024 (player, score) VALUES ('$player', '$score')";

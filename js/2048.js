@@ -131,23 +131,27 @@ function checkGameOver() {
     }
 
     if (gameOver) {
+        const playerName = prompt("Enter your name to join LeaderBoard!");
         document.getElementById('status').textContent = 'Game Over!';
         const hiTable = document.getElementById('highScoresTable');
         hiTable.style.display = 'flex'; 
         const data = {
-            player: 'Tommy',
+            player: playerName,
             score: score
         }
 
         // Send the POST request to your PHP script
         fetch('2048-hi-score', {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(data),
         })
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
             // Display the response message
-            alert('worked', data);
+            alert('worked' + JSON.stringify(data));
         })
         .catch(error => console.error('Error:', error));
 
