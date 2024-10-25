@@ -160,6 +160,7 @@ function checkGameOver() {
 
             isGameActive = false; // Set the game state to inactive
             fetchHighScores();
+            fetchHighScores();
         }
     } else {
         document.getElementById('status').textContent = '';

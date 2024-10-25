@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }  
 }
 
+
+
 // Fetch high scores
 $sql = "SELECT player, score FROM hi2024 ORDER BY score DESC LIMIT 10";
 $result = $conn->query($sql);
