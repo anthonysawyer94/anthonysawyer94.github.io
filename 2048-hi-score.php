@@ -34,6 +34,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         //echo "Error: " . $insert_sql . "<br>" . $conn->error;
     }
+    // Check if the number of scores exceeds 30
+    $count_sql = "SELECT COUNT(*) as count FROM hi2024";
+    $count_result = $conn->query($count_sql);
+    $count_row = $count_result->fetch_assoc();
+
+    // If there are more than 30 entries, delete the lowest scores
+    if ($count_row['count'] > 30) {
+        // Delete the lowest scores (ORDER BY score ASC to get the lowest)
+        $delete_sql = "DELETE FROM hi2024 WHERE id NOT IN (SELECT id FROM (SELECT id FROM hi2024 ORDER BY score DESC LIMIT 30) as temp)";
+        $conn->query($delete_sql);
+    } else {
+        echo "Error: " . $insert_sql . "<br>" . $conn->error;
+    }  
 }
 
 // Fetch high scores

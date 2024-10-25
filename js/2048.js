@@ -159,10 +159,7 @@ function checkGameOver() {
             .catch(error => console.error('Error:', error));
 
             isGameActive = false; // Set the game state to inactive
-            //fetchHighScores();
-            window.onload = function() {
-                fetchHighScores();
-            };
+            fetchHighScores();
         }
     } else {
         document.getElementById('status').textContent = '';
