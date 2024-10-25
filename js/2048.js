@@ -112,6 +112,7 @@ function restartGame() {
 
 function checkGameOver() {
     let gameOver = true;
+    let isGameActive = true;
 
     for (let r = 0; r < boardSize; r++) {
         for (let c = 0; c < boardSize; c++) {
