@@ -181,6 +181,7 @@ function toggleHighScore() {
     const toggle = document.getElementById('toggle');
 
     if(scores.style.display === 'none') {
+        fetchHighScores()
         scores.style.display = 'flex';
         toggle.textContent = "Close High Scores"
     } else {
