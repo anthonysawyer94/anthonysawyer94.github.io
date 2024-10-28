@@ -26,18 +26,6 @@
     <div class="flex-div">
       <h3>Kings Videos</h3>
       <video controls="" autoplay="" name="media"><source src="https://cdn.nba.com/videos/teams/wordpress/media/sites/kings/2be95c58-f8fc-48eb-a90c-c51c2d3b2892_1280x720.mp4" type="video/mp4"></video>
-    </div>
-    <script>
-      const scoreboard = 'https://cors-anywhere.herokuapp.com/https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json';
-      fetch(scoreboard)
-      .then(res => res.json())
-      .then(data => {
-        console.log('scoreboard', data);
-      })
-      .catch(error => {
-        console.log('error', error);
-      })
-
-    </script>    
+    </div>  
   </body>
 </html>
