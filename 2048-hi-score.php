@@ -34,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         //echo "Error: " . $insert_sql . "<br>" . $conn->error;
     }
+    
+    /*
     // Check if the number of scores exceeds 30
     $count_sql = "SELECT COUNT(*) as count FROM hi2024";
     $count_result = $conn->query($count_sql);
@@ -47,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         echo "Error: " . $insert_sql . "<br>" . $conn->error;
     }  
+        */
 }
 
 

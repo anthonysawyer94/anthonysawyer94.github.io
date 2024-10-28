@@ -134,8 +134,18 @@ function checkGameOver() {
 
     if (gameOver) {
         if (isGameActive) { // Check if the game is still active
-            const playerName = prompt("Enter your name to join LeaderBoard!");
+            
             document.getElementById('status').textContent = 'Game Over!';
+            let playerName;
+            while (true) {
+                playerName = prompt("Enter your name to join LeaderBoard!");
+                if (playerName && playerName.trim() !== '') {
+                    break
+                } else {
+                    alert('Must Enter a Name')
+                }
+            }
+            
             const hiTable = document.getElementById('highScoresTable');
             hiTable.style.display = 'flex'; 
             const data = {
@@ -166,6 +176,19 @@ function checkGameOver() {
         document.getElementById('status').textContent = '';
     }
 }
+function toggleHighScore() {
+    const scores = document.getElementById('highScoresTable');
+    const toggle = document.getElementById('toggle');
+
+    if(scores.style.display === 'none') {
+        scores.style.display = 'flex';
+        toggle.textContent = "Close High Scores"
+    } else {
+        scores.style.display = 'none';
+        toggle.textContent = 'Show High Scores';
+    }
+}
+
 
 function showInstructions() {
     const modal = document.getElementById('instructionsModal');
