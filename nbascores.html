@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Anthony Sawyer">
+    <meta property="og:description" content="Check Out What I've Done.">
+    <meta property="og:image" content="https://www.anthonyjsawyer.com/pictures/tenerifeselfie.png">
+    <meta property="og:url" content="https://www.anthonyjsawyer.com/">
+    <meta property="og:type" content="website">
+    <title>Anthony Sawyer</title>
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/homestyles.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="./" class="logo">Anthony Sawyer</a>
+      </div>
+      <div class="nav-items">
+        <a href="./">Home</a>
+        <a href="nba-viz.html">NBA Stats</a>
+        <a href="youtube">Videos</a>
+        <a href="about">About</a>
+        <a href="games">Games</a>
+      </div>
+    </nav>
+    <div id="scoreboard">
+      <style>
+        .scoreboard {
+          display: flex;
+          justify-content: center;
+          align-items: center; /* Center items vertically */
+          width: 100%;
+          height: 100%;
+          background-color: red;
+          padding: 20px; /* Add padding for spacing */
+          box-sizing: border-box;
+        }
+
+        .game {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center; /* Center items vertically */
+          width: 100%; /* Full width for responsiveness */
+          max-width: 600px; /* Limit the max width */
+          height: 20%;
+          background-color: rgb(192, 64, 64);
+          padding: 10px;
+        }
+
+        .odds {
+          display: flex;
+          justify-content: flex-end;
+          width: 100%; /* Ensure it takes up the full width */
+        }
+
+      </style>
+
+    hello</div>
+  <body>
+  <script>
+    const nbaAPI = 'https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?sport=basketball&league=nba&region=us&lang=en&contentorigin=espn&configuration=SITE_DEFAULT&platform=web&buyWindow=1m&showAirings=buy%2Clive%2Creplay&showZipLookup=true&tz=America%2FNew_York&postalCode=95973';
+    const nflAPI = 'https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?sport=football&league=nfl&region=us&lang=en&contentorigin=espn&configuration=SITE_DEFAULT&platform=web&buyWindow=1m&showAirings=buy%2Clive%2Creplay&showZipLookup=true&tz=America%2FNew_York&postalCode=95973'
+
+    fetch(nbaAPI)
+    .then(res => res.json())
+    .then(data => {
+        const espn = data.sports[0].leagues[0].events;
+        console.log(espn);
+        const targetDiv = document.getElementById("scoreboard");
+        
+        espn.forEach(gameId => {
+            const gameLocation = gameId.location;
+            const teams = gameId.shortName;
+            const startingOdds = gameId.odds.details;
+            console.log(teams, startingOdds);
+            const newDiv = document.createElement('div');
+            targetDiv.appendChild(newDiv);
+            newDiv.className = 'game';
+            newDiv.innerText = teams;
+            console.log('new div', newDiv);
+            const odds = document.createElement('div');
+            newDiv.appendChild(odds);
+            odds.className = 'odds';
+            odds.innerText = startingOdds;
+
+
+        });
+    })
+    .catch(error => console.log('error', error));
+
+  </script>
+</html>
