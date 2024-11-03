@@ -49,7 +49,7 @@
             const longitude = position.coords.longitude;
             // Call your weather API here with the latitude and longitude
             console.log('lat lon', latitude, longitude);
-            fetch(`weather?lat=${latitude}&lon=${longitude}&units=imperial`)
+            fetch(`weather?lat=${latitude}&lon=${longitude}`)
               .then(res => res.json())
               .then(data => {
                 console.log("Weather", data); // This is the weather data
