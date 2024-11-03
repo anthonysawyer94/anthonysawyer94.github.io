@@ -1,4 +1,9 @@
 <?php
+require 'vendor/autoload.php'; // Include Composer's autoloader
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load(); // Load .env file
+
 
 // Allow requests only from your website
 //if (strpos($_SERVER['HTTP_REFERER'], 'https://anthonyjsawyer.com') === false) {
@@ -6,7 +11,7 @@
 //}
 
 // Your OpenWeather API Key
-$apiKey = '186fce6232608c1c135ee734a641feb9';
+$apiKey = $_ENV['API_KEY'];
 
 // The city or location to get the weather for (sent from the frontend)
 //$city = $_GET['city'] ?? null;

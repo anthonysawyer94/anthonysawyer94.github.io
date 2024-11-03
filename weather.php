@@ -1,12 +1,42 @@
 <?php
 
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
+
+require 'vendor/autoload.php'; // Include Composer's autoloader
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+
+try {
+    $dotenv->load(); // Load .env file
+} catch (Exception $e) {
+    echo json_encode([
+        'error' => true,
+        'message' => 'Error loading .env file: ' . $e->getMessage()
+    ]);
+    exit;
+}
+
+// Access the API key
+$apiKey = $_ENV['API_KEY'] ?? null;
+
+// Check if the API key is set, and return an error in JSON format if it isn’t
+//if (!$apiKey) {
+//    echo json_encode([
+//        'error' => true,
+//        'message' => 'Error: API_KEY is not set in the .env file.'
+//    ]);
+//    exit;
+//}
+
+
 // Allow requests only from your website
 //if (strpos($_SERVER['HTTP_REFERER'], 'https://anthonyjsawyer.com') === false) {
 //    die('Unauthorized access');
 //}
-
-// Your OpenWeather API Key
-$apiKey = '186fce6232608c1c135ee734a641feb9';
 
 // The city or location to get the weather for (sent from the frontend)
 //$city = $_GET['city'] ?? null;
