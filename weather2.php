@@ -12,7 +12,7 @@ $apiKey = '186fce6232608c1c135ee734a641feb9';
 //$city = $_GET['city'] ?? null;
 $latitude = $_GET['lat'] ?? null;
 $longitude = $_GET['lon'] ?? null;
-//$time = _GET['time'] ?? null;
+$time = $_GET['time'] ?? null;
 
 //if (!$city) {
 //    http_response_code(400);
@@ -29,11 +29,9 @@ if (!$latitude || !$longitude) {
 
 // The OpenWeather API URL
 $apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat={$latitude}&lon={$longitude}&appid={$apiKey}";
-$apiUrlTime = "https://api.openweathermap.org/data/3.0/onecall/timemachine?lat={$latitude}&lon={$longitude}&dt={$time}&appid={$apiKey}";
-$apiUrlAI = "https://api.openweathermap.org/data/3.0/onecall/overview?lon=-11.8092&lat=51.509865&appid={API key}"; // AI generated weather overview for the requested date
-$apiUrlMap = "https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={API key}"; //weather map!
+$apiUrlTime = "https://api.openweathermap.org/data/3.0/onecall/timemachine?lat={$latitude}&lon={$longitude}&dt={$time}&appid={$apiKey}&units=imperial";
 // Make the API request and handle errors
-$weatherData = @file_get_contents($apiUrl);
+$weatherData = @file_get_contents($apiUrlTime);
 
 
 if ($weatherData === FALSE) {
