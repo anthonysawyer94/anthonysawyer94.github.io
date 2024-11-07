@@ -1,8 +1,8 @@
 <?php
 
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require 'vendor/autoload.php'; // Include Composer's autoloader
 
@@ -37,7 +37,7 @@ $response = file_get_contents($url);
 
 if ($response === FALSE) {
     http_response_code(500);
-    echo json_encode(['error' => 'Unable to retrieve weather data']);
+    echo json_encode(['error' => 'Unable to retrieve timezone data']);
     exit;
 }
 
