@@ -30,7 +30,7 @@ $longitude = $_GET['lon'] ?? null;
 $timestamp = $_GET['timestamp'] ?? null;
 
 // API URL with parameters
-$url = "http://api.timezonedb.com/v2.1/get-time-zone?key=$api_Key&format=json&by=position&lat=$latitude&lng=$longitude&time=$timestamp";
+$url = "http://api.timezonedb.com/v2.1/get-time-zone?key=$apiKey&format=json&by=position&lat=$latitude&lng=$longitude&time=$timestamp";
 
 // Make the API request
 $response = file_get_contents($url);
