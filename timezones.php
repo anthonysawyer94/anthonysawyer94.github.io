@@ -40,6 +40,11 @@ if ($response !== false) {
     // Decode the JSON response
     $data = json_decode($response, true);
     
+    // Send the result back to the frontend
+    header('Content-Type: application/json');
+    header("Access-Control-Allow-Origin: https://www.anthonyjsawyer.com");
+    header("Access-Control-Allow-Methods: GET");
+    echo $response;
     // Get the local time
     if (isset($data['formatted'])) {
         echo "Local time: " . $data['formatted'];
