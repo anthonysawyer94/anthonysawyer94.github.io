@@ -35,23 +35,15 @@ $url = "http://api.timezonedb.com/v2.1/get-time-zone?key=$api_key&format=json&by
 // Make the API request
 $response = file_get_contents($url);
 
-// Check if the request was successful
-if ($response !== false) {
-    // Decode the JSON response
-    $data = json_decode($response, true);
-    
-    // Send the result back to the frontend
-    header('Content-Type: application/json');
-    header("Access-Control-Allow-Origin: https://www.anthonyjsawyer.com");
-    header("Access-Control-Allow-Methods: GET");
-    echo $response;
-    // Get the local time
-    if (isset($data['formatted'])) {
-        echo "Local time: " . $data['formatted'];
-    } else {
-        echo "Error: Could not retrieve local time.";
-    }
-} else {
-    echo "Error: Failed to retrieve data.";
+if ($response === FALSE) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Unable to retrieve weather data']);
+    exit;
 }
+
+// Send the result back to the frontend
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: https://www.anthonyjsawyer.com");
+header("Access-Control-Allow-Methods: GET");
+echo $response;
 ?>
