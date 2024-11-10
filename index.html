@@ -46,8 +46,12 @@
             //const time = Math.floor(Date.now() / 1000);
             //const time = 1730416713;
             console.log('Position Data', position);
-            const battery = navigator.getBattery();
-            console.log('battery:', battery);
+            navigator.getBattery().then(function(battery) {
+                console.log("Battery Level: " + battery.level * 100 + "%");
+                console.log("Charging: " + (battery.charging ? "Yes" : "No"));
+                console.log("Charging Time: " + battery.chargingTime + " seconds");
+                console.log("Discharging Time: " + battery.dischargingTime + " seconds");
+            });
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             // Call your weather API here with the latitude and longitude
