@@ -20,3 +20,22 @@
       <a href="about">About</a>
       <a href="games">Games</a>
     </div>
+    <button id="shareButton">Share</button>
+
+    <script>
+      document.getElementById("shareButton").addEventListener("click", function() {
+          if (navigator.share) {
+              navigator.share({
+                  title: 'This Guy is Awesome!',
+                  text: 'Check Out this cool Site',
+                  url: 'https://anthonyjsawyer.com'
+              })
+              .then(() => console.log('Content shared successfully!'))
+              .catch((error) => console.error('Error sharing:', error));
+          } else {
+              console.log("Web Share API not supported in this browser.");
+          }
+      });
+    </script>
+  </body>
+</html>
