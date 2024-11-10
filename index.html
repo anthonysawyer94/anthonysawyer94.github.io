@@ -33,21 +33,31 @@
           <img src="pictures/tenerifeselfie.png" alt="photo of Anthony 1" class="imageant">
           </a>
         </div>
+        <button id="shareButton">Share</button>
       </div>
       <script>
+        document.getElementById("shareButton").addEventListener("click", function() {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Check out this content!',
+                text: 'This is an awesome piece of content I wanted to share.',
+                url: 'https://example.com'
+            })
+            .then(() => console.log('Content shared successfully!'))
+            .catch((error) => console.error('Error sharing:', error));
+        } else {
+            console.log("Web Share API not supported in this browser.");
+        }
+    });
+
+
+
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(success, error);
             
         } else {
             console.log("Geolocation is not supported by this browser.");
-        }
-
-        const files = [new File(['Hello world!'], 'hello.txt', { type: 'text/plain' })];
-
-        if (navigator.canShare({ files })) {
-            navigator.share({ files });
-        } else {
-            console.log("File sharing is not supported.");
         }
 
         function success(position) {
