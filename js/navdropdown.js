@@ -1,17 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const gamesLink = document.getElementById('games');
-    console.log('games linkk', gamesLink);
-    const dropdownContent = document.querySelector('.dropdown-content');
-    console.log('dropdown', dropdownContent);
-    gamesLink.addEventListener('click', function (event) {
+
+    // Projects Dropdown
+    const projectsLink = document.getElementById('projects');
+    const projectsContent = document.querySelector('.projects-content');
+
+    projectsLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        projectsContent.classList.toggle('show'); // Toggle the 'show' class to open/close the dropdown
+      });
+    
+      // Close the dropdown if clicked outside
+      document.addEventListener('click', function (event) {
+        if (!projectsContent.contains(event.target) && event.target !== projectsLink) {
+            projectsContent.classList.remove('show');
+        }
+      });
+
+    // Misc Dropdown
+    const miscLink = document.getElementById('misc');
+    const miscContent = document.querySelector('.misc-content');
+
+    miscLink.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent default link behavior
-      dropdownContent.classList.toggle('show'); // Toggle the 'show' class to open/close the dropdown
+      miscContent.classList.toggle('show'); // Toggle the 'show' class to open/close the dropdown
     });
   
     // Close the dropdown if clicked outside
     document.addEventListener('click', function (event) {
-      if (!dropdownContent.contains(event.target) && event.target !== gamesLink) {
-        dropdownContent.classList.remove('show');
+      if (!miscContent.contains(event.target) && event.target !== miscLink) {
+        miscContent.classList.remove('show');
       }
     });
   });
