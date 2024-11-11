@@ -5,9 +5,7 @@
 //error_reporting(E_ALL);
 
 require 'vendor/autoload.php'; // Include Composer's autoloader
-
 use Dotenv\Dotenv;
-
 $dotenv = Dotenv::createImmutable(__DIR__);
 
 try {
