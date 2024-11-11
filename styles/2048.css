@@ -1,6 +1,6 @@
 /* Define the nav height variable */
 :root {
-    --nav-height: 80; /* Set the height of your nav */
+    --nav-height: 28px; /* Set the height of your nav */
 }
 
 nav {
