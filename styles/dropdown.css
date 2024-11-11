@@ -23,10 +23,13 @@ html, body {
     position: absolute; /* Position the dropdown absolutely */
     top: 100%; /* Position it below the "Games" link */
     right: 0;
-    background-color: white;
+    background-color: #a4adae;
     min-width: 100px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(68, 91, 105, 0.2);
     z-index: 1;
+    padding: 0;  /* Remove extra padding */
+    margin: 0;   /* Remove margin */
+    text-align: left;  /* Align text to the left */
   }
   
 /* Show dropdown when 'show' class is added */
