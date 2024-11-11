@@ -23,6 +23,7 @@
               <li><a href="nba-viz">NBA Stats</a></li>
               <li><a href="shop">Shop</a></li>
               <li><a href="2048">2048 Game</a></li>
+              <li><a href="nbascores.html">Betting Odds</a></li>
             </ul>
           </div>
   
@@ -33,26 +34,30 @@
               <li><a href="youtube">Videos</a></li>
               <li><a href="about">About</a></li>
               <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
+              <li><a href="kings">Kings Hype</a></li>
             </ul>
           </div>
         </div>
-    </nav>
-    <div class="game-container">
-        <h1>Rock Paper Scissors</h1>
-        <div class="choice-buttons">
-            <button class="choice" data-choice="rock">Rock</button>
-            <button class="choice" data-choice="paper">Paper</button>
-            <button class="choice" data-choice="scissors">Scissors</button>
+      </nav>
+    <div class="container">
+        <div class="game-container">
+            <h1>Rock Paper Scissors</h1>
+            <div class="choice-buttons">
+                <button class="choice" data-choice="rock">Rock</button>
+                <button class="choice" data-choice="paper">Paper</button>
+                <button class="choice" data-choice="scissors">Scissors</button>
+            </div>
+            <div class="result">
+                <p id="result-text">Choose your move!</p>
+            </div>
+            <div class="scoreboard">
+                <p>Player: <span id="player-score">0</span></p>
+                <p>Computer: <span id="computer-score">0</span></p>
+            </div>
+            <button onclick="restartGame()">Restart</button>
         </div>
-        <div class="result">
-            <p id="result-text">Choose your move!</p>
-        </div>
-        <div class="scoreboard">
-            <p>Player: <span id="player-score">0</span></p>
-            <p>Computer: <span id="computer-score">0</span></p>
-        </div>
-        <button onclick="restartGame()">Restart</button>
+        <script src="js/rock-paper-scissors.js"></script>
+
     </div>
-    <script src="js/rock-paper-scissors.js"></script>
 </body>
 </html>
