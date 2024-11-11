@@ -21,8 +21,8 @@
     z-index: 1;
   }
   
-  /* Show the dropdown on hover */
-  .dropdown:hover .dropdown-content {
+  /* Show dropdown when 'show' class is added */
+  .dropdown-content.show {
     display: block;
   }
   
