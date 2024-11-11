@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     gamesLink.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent default link behavior
-      dropdownContent.classList.toggle('show'); // Toggle the 'show' class
+      dropdownContent.classList.toggle('show'); // Toggle the 'show' class to open/close the dropdown
     });
   
     // Close the dropdown if clicked outside

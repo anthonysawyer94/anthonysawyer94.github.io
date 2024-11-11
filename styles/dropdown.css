@@ -17,13 +17,8 @@
     left: 0;
     background-color: white;
     min-width: 150px;
-    max-height: 200px; /* Set max height to keep within view */
-    overflow-y: auto; /* Enable scroll if content overflows */
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
-    list-style: none; /* Remove list dots */
-    padding: 0;
-    margin: 0;
   }
   
   /* Show dropdown when 'show' class is added */
