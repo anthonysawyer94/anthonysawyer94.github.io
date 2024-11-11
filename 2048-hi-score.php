@@ -1,9 +1,9 @@
 <?php
 
 //Error Messages if needed
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 require 'vendor/autoload.php'; // Include Composer's autoloader
 use Dotenv\Dotenv;
@@ -23,7 +23,7 @@ try {
 $host = $_ENV['DB_HOST'] ?? null;
 $dbname = 'website';
 $username = $_ENV['DB_USER_NAME'] ?? null;
-$password = $_ENV['DP_PASS'] ?? null;
+$password = $_ENV['DB_PASS'] ?? null;
 
 // Create a new MySQL connection
 $conn = new mysqli($host, $username, $password, $dbname);
