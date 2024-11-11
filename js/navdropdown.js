@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const gamesLink = document.getElementById('gamesLink');
+    const gamesLink = document.getElementById('games');
     const dropdownContent = document.querySelector('.dropdown-content');
   
     gamesLink.addEventListener('click', function (event) {
