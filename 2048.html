@@ -39,45 +39,47 @@
           </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="game-container">
+            <h1>2048 Game</h1>
+            <div id="score">Score: 0</div>
+            <div id="board" class="board"></div>
+            <div class="controls">
+                <button onclick="restartGame()">Restart</button>
+                <button onclick="showInstructions()">Instructions</button>
+                <button id='toggle' onclick="toggleHighScore()">Show High Scores</button>
+            </div>
+            <div id="status"></div>
+        </div>
     
-    <div class="game-container">
-        <h1>2048 Game</h1>
-        <div id="score">Score: 0</div>
-        <div id="board" class="board"></div>
-        <div class="controls">
-            <button onclick="restartGame()">Restart</button>
-            <button onclick="showInstructions()">Instructions</button>
-            <button id='toggle' onclick="toggleHighScore()">Show High Scores</button>
+        <!-- High Scores Table -->
+        <div id="highScoresTable">
+            <h2>High Scores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="scoresBody">
+                    <!-- Scores will be populated here -->
+                </tbody>
+            </table>
         </div>
-        <div id="status"></div>
-    </div>
-
-    <!-- High Scores Table -->
-    <div id="highScoresTable">
-        <h2>High Scores</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>Player</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody id="scoresBody">
-                <!-- Scores will be populated here -->
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Instructions Modal -->
-    <div id="instructionsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeInstructions()">&times;</span>
-            <h2>Instructions</h2>
-            <p>Use the arrow keys to move the tiles. Merge matching tiles to create new tiles with higher values. Reach 2048 to win!</p>
+    
+        <!-- Instructions Modal -->
+        <div id="instructionsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeInstructions()">&times;</span>
+                <h2>Instructions</h2>
+                <p>Use the arrow keys to move the tiles. Merge matching tiles to create new tiles with higher values. Reach 2048 to win!</p>
+            </div>
         </div>
+    
+        <script src="js/2048.js"></script>
     </div>
 
-    <script src="js/2048.js"></script>
 </body>
 </html>

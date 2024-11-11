@@ -1,5 +1,5 @@
 /* General Styles */
-body {
+.container {
     overflow: hidden; /* Prevents the screen from scrolling */
     touch-action: none; /* Disables the default touch scrolling */
     font-family: Arial, sans-serif;
