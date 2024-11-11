@@ -2,18 +2,19 @@
 .nav-items {
     display: flex;
     gap: 1rem;
+    position: relative; /* Add relative positioning to allow absolute positioning for the dropdown */
   }
   
   /* Dropdown container */
   .dropdown {
-    position: relative;
+    position: relative; /* Ensure the dropdown is positioned within the nav */
   }
   
   /* Hide the dropdown content initially */
   .dropdown-content {
     display: none;
-    position: absolute;
-    top: 100%;
+    position: absolute; /* Position the dropdown absolutely */
+    top: 100%; /* Position it below the "Games" link */
     left: 0;
     background-color: white;
     min-width: 150px;
