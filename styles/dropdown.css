@@ -2,6 +2,7 @@
 .nav-items {
     display: flex;
     gap: 1rem;
+    align-items: center;
     position: relative; /* Add relative positioning to allow absolute positioning for the dropdown */
   }
   
