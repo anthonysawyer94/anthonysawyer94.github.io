@@ -21,7 +21,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100vw - var(--nav-height));
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
