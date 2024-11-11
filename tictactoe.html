@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles/tictactoe.css">
+    <script src="js/navdropdown.js" defer></script>
 </head>
 <body>
-    <div class="back-button" onclick="goBack()">
-        <div class="arrow">&#8592;</div>
-    </div>
+    <nav>
+        <div>
+          <a href="./" class="logo">Anthony Sawyer</a>
+        </div>
+        <div class="nav-items">
+          <a href="./">Home</a>
+  
+          <!-- Projects Dropdown -->
+          <div class="dropdown">
+            <a href="#" id="projects">Projects</a>
+            <ul class="dropdown-content projects-content">
+              <li><a href="nba-viz">NBA Stats</a></li>
+              <li><a href="shop">Shop</a></li>
+              <li><a href="2048">2048 Game</a></li>
+            </ul>
+          </div>
+  
+          <!-- Misc Dropdown -->
+          <div class="dropdown">
+            <a href="#" id="misc">Misc</a>
+            <ul class="dropdown-content misc-content">
+              <li><a href="youtube">Videos</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
 
     <div class="game-container">
         <h1>Tic Tac Toe</h1>

@@ -6,19 +6,36 @@
     <title>Games</title>
     <link rel="stylesheet" href="styles/games.css">
     <link rel="stylesheet" href="styles/nav.css">
+    <script src="js/navdropdown.js" defer></script>
 </head>
 <body>
     <nav>
-      <div>
-        <a href="./" class="logo">Anthony Sawyer</a>
-      </div>
-      <div class="nav-items">
-        <a href="./">Home</a>
-        <a href="nba-viz.html">NBA Stats</a>
-        <a href="youtube">Videos</a>
-        <a href="about">About</a>
-        <a href="games">Games</a>
-      </div>
+        <div>
+          <a href="./" class="logo">Anthony Sawyer</a>
+        </div>
+        <div class="nav-items">
+          <a href="./">Home</a>
+  
+          <!-- Projects Dropdown -->
+          <div class="dropdown">
+            <a href="#" id="projects">Projects</a>
+            <ul class="dropdown-content projects-content">
+              <li><a href="nba-viz">NBA Stats</a></li>
+              <li><a href="shop">Shop</a></li>
+              <li><a href="2048">2048 Game</a></li>
+            </ul>
+          </div>
+  
+          <!-- Misc Dropdown -->
+          <div class="dropdown">
+            <a href="#" id="misc">Misc</a>
+            <ul class="dropdown-content misc-content">
+              <li><a href="youtube">Videos</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
+            </ul>
+          </div>
+        </div>
     </nav>
     <section>
         <div class="games-container">

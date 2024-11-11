@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/homestyles.css" />
     <script src="js/main.js" defer></script>
+    <script src="js/navdropdown.js" defer></script>
   </head>
   <body>
     <nav>
@@ -20,12 +21,28 @@
       </div>
       <div class="nav-items">
         <a href="./">Home</a>
-        <a href="nba-viz.html">NBA Stats</a>
-        <a href="youtube">Videos</a>
-        <a href="about">About</a>
-        <a href="games">Games</a>
+
+        <!-- Projects Dropdown -->
+        <div class="dropdown">
+          <a href="#" id="projects">Projects</a>
+          <ul class="dropdown-content projects-content">
+            <li><a href="nba-viz">NBA Stats</a></li>
+            <li><a href="shop">Shop</a></li>
+            <li><a href="2048">2048 Game</a></li>
+          </ul>
+        </div>
+
+        <!-- Misc Dropdown -->
+        <div class="dropdown">
+          <a href="#" id="misc">Misc</a>
+          <ul class="dropdown-content misc-content">
+            <li><a href="youtube">Videos</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
+          </ul>
+        </div>
       </div>
-    </nav>
+  </nav>
     <div class="container">
       <div class="scoreboard nba">
         NBA
