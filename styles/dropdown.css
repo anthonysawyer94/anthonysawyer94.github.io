@@ -22,10 +22,12 @@
     z-index: 1;
   }
   
-  /* Show dropdown when 'show' class is added */
-  .dropdown-content.show {
-    display: block;
-  }
+/* Show dropdown when 'show' class is added */
+.dropdown-content.show,
+.project-content.show,
+.misc-content.show {
+  display: block;
+}
   
   /* Dropdown item styles */
   .dropdown-content li {
