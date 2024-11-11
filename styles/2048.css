@@ -1,3 +1,17 @@
+/* Define the nav height variable */
+:root {
+    --nav-height: 80; /* Set the height of your nav */
+}
+
+nav {
+    height: var(--nav-height);
+    background: #BBC4C6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc(100vw - 1300px) / 2;
+}
+
 /* General Styles */
 .container {
     overflow: hidden; /* Prevents the screen from scrolling */
@@ -7,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    min-height: calc(100vh - var(--nav-height));
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
