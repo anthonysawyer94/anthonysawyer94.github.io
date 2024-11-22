@@ -40,7 +40,7 @@ if ($response === FALSE) {
 
 // Send the result back to the frontend
 header('Content-Type: application/json');
-header("Access-Control-Allow-Origin: https://www.anthonyjsawyer.com");
+header("Access-Control-Allow-Origin: https://www.anthonyjsawyer.com/apis");
 header("Access-Control-Allow-Methods: GET");
 echo $response;
 
