@@ -27,7 +27,7 @@ $apiKey = $_ENV['TICKETMASTER_API_KEY'] ?? null;
 
 
 // API URL with parameters
-$url = "https://app.ticketmaster.com/commerce/v2/events/0E006106E400513E/offers.json?apikey=$apiKey";
+$url = "https://app.ticketmaster.com/commerce/v2/events/1C0060FA993F43C3/offers.json?apikey=$apiKey";
 
 // Make the API request
 $response = file_get_contents($url);
