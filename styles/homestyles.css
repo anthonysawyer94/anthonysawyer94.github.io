@@ -42,7 +42,7 @@
     overflow: hidden;
 }
 
-.column-left {
+.column-left, .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,6 +52,7 @@
     margin: auto;
 
 }
+
 
 .column-left h1 {
     margin-bottom: 1rem;
