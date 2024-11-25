@@ -11,7 +11,7 @@ $dotenv->load(); // Load .env file
 //}
 
 // Your OpenWeather API Key
-$apiKey = $_ENV['API_KEY'];
+$apiKey = $_ENV['OPENWEATHER_API_KEY'];
 
 // The city or location to get the weather for (sent from the frontend)
 //$city = $_GET['city'] ?? null;

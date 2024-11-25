@@ -1,0 +1,6 @@
+/.DS_Store
+/server/node_modules
+/server/.env
+.env
+/vendor/
+/server/*

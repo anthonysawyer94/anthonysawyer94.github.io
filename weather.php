@@ -19,7 +19,7 @@ try {
 }
 
 // Access the API key
-$apiKey = $_ENV['API_KEY'] ?? null;
+$apiKey = $_ENV['OPENWEATHER_API_KEY'] ?? null;
 
 // Check if the API key is set, and return an error in JSON format if it isn’t
 //if (!$apiKey) {
