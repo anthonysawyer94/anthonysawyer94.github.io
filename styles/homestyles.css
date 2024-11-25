@@ -93,22 +93,6 @@ button {
 button:hover {
     background: #45C8E5;
     color:#000;
-
-}
-
-.column-right {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: #45C8E5;
-}
-
-.column-right h2{
-    margin: auto;
-    font-size: 12;
-
 }
 
 .image1 {
