@@ -1,4 +1,6 @@
 const weatherResult = document.getElementById('weatherResult');
+const container = document.getElementsByClassName('container');
+
 
 async function getWeather(lat, lon) {
     try {
@@ -6,6 +8,9 @@ async function getWeather(lat, lon) {
         if (!response.ok) throw new Error('Failed to fetch weather data.');
 
         const weatherData = await response.json();
+
+        // remove weather data and fectching
+        container.innerHTML = '';
 
         // Display the data dynamically
         weatherResult.innerHTML = `
