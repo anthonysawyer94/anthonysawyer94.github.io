@@ -42,7 +42,8 @@
     overflow: hidden;
 }
 
-.column-left, .container {
+.column-left, 
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
