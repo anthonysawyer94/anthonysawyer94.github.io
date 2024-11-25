@@ -11,6 +11,7 @@
     <title>Anthony Sawyer</title>
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/homestyles.css" />
+    <link rel="stylesheet" href="styles/weatherapp.css" />
     <script src="js/main.js" defer></script>
     <script src="js/navdropdown.js" defer></script>
   </head>
@@ -51,6 +52,11 @@
           <p>Welcome!</p>
           <img src="pictures/tenerifeselfie.png" alt="photo of Anthony 1" class="imageant">
         </div>
+        <div class="container">
+          <h1>Weather App</h1>
+          <p>Fetching your location and weather data...</p>
+          <div id="weatherResult"></div>
+      </div>
       </div>
       <script>
 
@@ -75,29 +81,68 @@
           });
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-          // Call your weather API here with the latitude and longitude
-          console.log('lat lon', latitude, longitude);
-          fetch(`weather?lat=${latitude}&lon=${longitude}`)
-            .then(res => res.json())
-            .then(data => {
-              console.log("Weather", data); // This is the weather data
-              let weather = data.main.temp;
-              let city = data.name;
-              //weather = Math.round(((weather -273.15) * (9 / 5)) + 32);
-              console.log(`Current Weather in ${city}: ${weather} °F`);
-              const targetDiv = document.querySelector('.column-left');
-              console.log(targetDiv);
-              const p = document.createElement('p');
-              targetDiv.appendChild(p);
-              p.innerText = `Current Weather in ${city}: ${weather} °F`;
-            })
-            .catch(error => console.error('Error:', error));
-      }
 
-      function error() {
-          console.log("Unable to retrieve your location.");
-      }
+          const weatherResult = document.getElementById('weatherResult');
+          const container = document.getElementsByClassName('container')[0]; // Select container once
 
+          async function getWeather(lat, lon) {
+              try {
+                  // Fetch weather data
+                  const response = await fetch(`weather?lat=${lat}&lon=${lon}`);
+                  if (!response.ok) throw new Error('Failed to fetch weather data.');
+
+                  const weatherData = await response.json();
+
+                  // Extract relevant data
+                  const temp = weatherData.main.temp;
+                  const humidity = weatherData.main.humidity;
+                  const city = weatherData.name;
+                  const description = weatherData.weather[0].main;
+                  const windSpeed = weatherData.wind.speed;
+                  const icon = weatherData.weather[0].icon; // Get weather icon
+
+                  // Remove placeholder elements
+                  const h1 = container.querySelector('h1');
+                  const ptag = container.querySelector('p');
+                  if (ptag) ptag.remove();
+                  if (h1) h1.remove();
+
+                  // Display weather data dynamically
+                  weatherResult.innerHTML = `
+                      <div class="weather-card">
+                          <h2 style="color: black;">${city}</h2>
+                          <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
+                          <p><strong>Temperature:</strong> ${temp}°C</p>
+                          <p><strong>Humidity:</strong> ${humidity}%</p>
+                          <p><strong>Description:</strong> ${description}</p>
+                          <p><strong>Wind Speed:</strong> ${windSpeed} m/s</p>
+                      </div>
+                  `;
+              } catch (error) {
+                  weatherResult.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+              }
+          }
+
+          function getLocation() {
+              if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(
+                      (position) => {
+                          const { latitude, longitude } = position.coords; // Destructure coords
+                          getWeather(latitude, longitude);
+                      },
+                      (error) => {
+                          weatherResult.innerHTML = `<p style="color: red;">Error: Unable to retrieve location (${error.message}).</p>`;
+                      }
+                  );
+              } else {
+                  weatherResult.innerHTML = `<p style="color: red;">Error: Geolocation is not supported by your browser.</p>`;
+              }
+          }
+
+          // Fetch weather data on page load
+          window.addEventListener('load', getLocation);
+
+        }
 
       </script>
     
