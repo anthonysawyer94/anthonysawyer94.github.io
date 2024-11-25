@@ -71,10 +71,11 @@
                 const weatherData = await response.json();
 
                 // Extract relevant data
-                const temp = weatherData.main.temp;
+                const temp = Math.round(weatherData.main.temp);
+                const feelsLike = Math.round(weatherData.main.feels_like);
                 const humidity = weatherData.main.humidity;
                 const city = weatherData.name;
-                const description = weatherData.weather[0].main;
+                const description = weatherData.weather[0].description;
                 const windSpeed = weatherData.wind.speed;
                 const icon = weatherData.weather[0].icon; // Get weather icon
 
@@ -90,6 +91,7 @@
                         <h2 style="color: black;">${city}</h2>
                         <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
                         <p><strong>Temperature:</strong> ${temp}°F</p>
+                        <p><strong>Feels Like:</strong> ${feelsLike}°F</p>
                         <p><strong>Humidity:</strong> ${humidity}%</p>
                         <p><strong>Description:</strong> ${description}</p>
                         <p><strong>Wind Speed:</strong> ${windSpeed} m/s</p>
