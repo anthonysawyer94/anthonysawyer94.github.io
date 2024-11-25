@@ -1,5 +1,5 @@
 const weatherResult = document.getElementById('weatherResult');
-const container = document.getElementsByClassName('container');
+const container = document.getElementsByClassName('container')[0];
 
 
 async function getWeather(lat, lon) {
