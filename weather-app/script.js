@@ -16,9 +16,8 @@ form.addEventListener('submit', async (event) => {
         // Display the data dynamically
         weatherResult.innerHTML = `
             <h2>Weather Data</h2>
-            <p><strong>Temperature:</strong> ${weatherData.temperature}°C</p>
-            <p><strong>Condition:</strong> ${weatherData.condition}</p>
-            <p><strong>Humidity:</strong> ${weatherData.humidity}%</p>
+            <p><strong>Temperature:</strong> ${weatherData.main.temp}°F</p>
+            <p><strong>Humidity:</strong> ${weatherData.main.humidity}%</p>
         `;
     } catch (error) {
         weatherResult.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
