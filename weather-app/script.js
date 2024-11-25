@@ -11,6 +11,10 @@ async function getWeather(lat, lon) {
 
         // remove weather data and fectching
         console.log('container ', container);
+        ptag = container.querySelector('p');
+        if (ptag) {
+            ptag.remove();
+        }
 
         // Display the data dynamically
         weatherResult.innerHTML = `
