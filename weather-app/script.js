@@ -10,7 +10,7 @@ async function getWeather(lat, lon) {
         const weatherData = await response.json();
 
         // remove weather data and fectching
-        container.innerHTML = '';
+        console.log('container ', container);
 
         // Display the data dynamically
         weatherResult.innerHTML = `
