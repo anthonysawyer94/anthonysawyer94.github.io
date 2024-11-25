@@ -26,7 +26,7 @@ async function getWeather(lat, lon) {
         // Display weather data dynamically
         weatherResult.innerHTML = `
             <div class="weather-card">
-                <h2 style="color: #4CAF50;">${city}</h2>
+                <h2 style="color: black;">${city}</h2>
                 <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
                 <p><strong>Temperature:</strong> ${temp}°C</p>
                 <p><strong>Humidity:</strong> ${humidity}%</p>
