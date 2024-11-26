@@ -303,7 +303,6 @@ function checkIfNewHiScore(score) {
             .then(data => {
             let scores = [];
             for(let i = 0; i < data.length; i ++) {
-                console.log('hi', data[i]);
                 const s = Number(data[i].score);
                 scores.push(s);
             }
