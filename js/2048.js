@@ -3,6 +3,12 @@ let boardSize = 4;
 let score = 0;
 let isGameActive = true; // Variable to track the game state
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the game when the page is loaded
+    initializeBoard();
+    document.addEventListener('keydown', handleKeyPress);
+});
+
 function initializeBoard() {
     board = Array.from({ length: boardSize }, () => Array(boardSize).fill(null));
     score = 0; // Reset score when restarting
@@ -213,8 +219,6 @@ function closeInstructions() {
     const modal = document.getElementById('instructionsModal');
     modal.style.display = 'none';
 }
-
-restartGame()
 
 // Close the modal when clicking outside of it
 window.onclick = function(event) {
