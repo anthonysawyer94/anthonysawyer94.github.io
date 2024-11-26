@@ -122,6 +122,7 @@ function restartGame() {
 
 async function checkGameOver() {
     let gameOver = true;
+    moveFunctions = false;
 
     for (let r = 0; r < boardSize; r++) {
         for (let c = 0; c < boardSize; c++) {
