@@ -3,6 +3,7 @@ let boardSize = 4;
 let score = 0;
 let isGameActive = true; // Variable to track the game state
 let moveFunctions = true;
+const filter = new Filter();
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the game when the page is loaded
@@ -158,10 +159,16 @@ async function checkGameOver() {
                     let playerName;
                     while (true) {
                         playerName = prompt("Enter your name to join LeaderBoard!");
+                        const cleanName = filter.clean(playerName);
                         if (playerName && playerName.trim() !== '') {
                             break
                         } else {
                             alert('Must Enter a Name')
+                        }
+                        if (cleanName !== playerName) {
+                            alert('Must choose appropriate Name')
+                        } else {
+                            break
                         }
                     }
                     
