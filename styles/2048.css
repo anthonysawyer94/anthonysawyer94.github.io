@@ -172,6 +172,6 @@ table {
   th, td {
     text-align: center; /* Centers text horizontally */
     vertical-align: middle; /* Centers text vertically */
-    padding: 10px; /* Optional: Adds space inside cells */
-    border: 1px solid #ddd; /* Adds borders to table cells */
+    padding: 1px; /* Optional: Adds space inside cells */
+    border: 1px solid #b8bdbd; /* Adds borders to table cells */
   }
