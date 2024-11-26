@@ -117,9 +117,7 @@ function restartGame() {
     initializeBoard();
     const hiTable = document.getElementById('highScoresTable');
     if (hiTable.style.display == 'none') {
-        return
-    } else {
-        toggleHighScore();
+        toggle.textContent = 'Show High Scores';
     }
     isGameActive = true;
 }
