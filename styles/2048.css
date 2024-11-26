@@ -71,11 +71,10 @@ html {
 h1 {
     color: #776e65;
     font-size: 1.8em;
-    margin: 10px 0;
 }
 
 #score {
-    margin: 20px;
+    margin: 5px;
     font-size: 1.3em;
     color: #776e65;
 }
