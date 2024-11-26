@@ -2,6 +2,7 @@ let board;
 let boardSize = 4;
 let score = 0;
 let isGameActive = true; // Variable to track the game state
+let gameOver = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the game when the page is loaded
@@ -120,7 +121,7 @@ function restartGame() {
 }
 
 async function checkGameOver() {
-    let gameOver = true;
+    gameOver = true;
 
     for (let r = 0; r < boardSize; r++) {
         for (let c = 0; c < boardSize; c++) {
