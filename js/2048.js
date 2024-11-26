@@ -155,20 +155,13 @@ async function checkGameOver() {
                 // Ask the user if they want to join the leaderboard
                 const wantsToJoin = confirm("You made the Leaderboard! Do you want to Enter your name?");
                 if (wantsToJoin) {
-                    const filter = new ProfanityFilter();
                     let playerName;
                     while (true) {
                         playerName = prompt("Enter your name to join LeaderBoard!");
-                        const profane = filter.isProfane(playerName);
                         if (playerName && playerName.trim() !== '') {
                             break
                         } else {
                             alert('Must Enter a Name')
-                        }
-                        if (profane) {
-                            alert('Must choose appropriate Name')
-                        } else {
-                            break
                         }
                     }
                     
