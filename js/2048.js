@@ -136,7 +136,9 @@ function checkGameOver() {
         if (isGameActive) { // Check if the game is still active
             
             document.getElementById('status').textContent = 'Game Over!';
-
+            console.log('Your Score', score);
+            const response = checkIfNewHiScore(score);
+            console.log('this was the response:', response);
             //Check to see if player Got in the top 10 LeaderBoard
             if (checkIfNewHiScore(score)) {
                 // Ask the user if they want to join the leaderboard
