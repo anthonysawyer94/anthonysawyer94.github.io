@@ -2,6 +2,7 @@ let board;
 let boardSize = 4;
 let score = 0;
 let isGameActive = true; // Variable to track the game state
+let moveFunctions = true;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the game when the page is loaded
@@ -143,6 +144,7 @@ async function checkGameOver() {
         if (isGameActive) { // Check if the game is still active
             
             document.getElementById('status').textContent = 'Game Over!';
+            moveFunctions = false;
             console.log('Your Score', score);
             const madeLeaderBoard = await checkIfNewHiScore(score);
             console.log('Made Leaderboard?:', madeLeaderBoard);
@@ -248,7 +250,7 @@ function handleTouchStart(evt) {
     yDown = firstTouch.clientY;
 }
 
-if (!gameOver) {
+if (moveFunctions) {
     function handleTouchMove(evt) {
         if (!xDown || !yDown) {
             return;
@@ -284,7 +286,7 @@ if (!gameOver) {
     }
 }
 
-if (!gameOver) {
+if (moveFunctions) {
     function handleMove(direction) {
         switch (direction) {
             case 'ArrowUp':
