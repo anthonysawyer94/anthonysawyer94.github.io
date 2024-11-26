@@ -116,7 +116,11 @@ function handleKeyPress(event) {
 function restartGame() {
     initializeBoard();
     const hiTable = document.getElementById('highScoresTable');
-    hiTable.style.display = 'none'; 
+    if (hiTable.style.display == 'none') {
+        return
+    } else {
+        toggleHighScore();
+    }
     isGameActive = true;
 }
 
