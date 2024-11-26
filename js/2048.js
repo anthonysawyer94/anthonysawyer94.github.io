@@ -117,6 +117,7 @@ function restartGame() {
     initializeBoard();
     const hiTable = document.getElementById('highScoresTable');
     const toggle = document.getElementById('toggle');
+    console.log('syles', hiTable.style.display);
     if (hiTable.style.display == 'none') {
         toggle.textContent = 'Show High Scores';
     }
