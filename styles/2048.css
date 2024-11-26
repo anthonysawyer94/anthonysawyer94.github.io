@@ -183,5 +183,4 @@ button {
     align-items: center; /* Adjust as needed */
     flex-direction: column; /* Adjust as needed */
     margin-top: calc(-2* var(--nav-height));
-
 }
