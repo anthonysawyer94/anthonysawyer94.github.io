@@ -214,10 +214,6 @@ function closeInstructions() {
     modal.style.display = 'none';
 }
 
-restartGame();
-restartGame();
-restartGame();
-
 // Close the modal when clicking outside of it
 window.onclick = function(event) {
     const modal = document.getElementById('instructionsModal');

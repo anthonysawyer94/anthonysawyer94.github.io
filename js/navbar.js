@@ -1,5 +1,5 @@
 async function navload() {
-  const res = await fetch('../navbar.html');
+  const res = await fetch('../navbar');
   const data = await res.text();
   document.getElementById('navbar').innerHTML =  data;
 }
