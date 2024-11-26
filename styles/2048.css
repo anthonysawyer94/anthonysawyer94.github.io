@@ -1,3 +1,7 @@
+/* Define the nav height variable */
+:root {
+    --nav-height: 28px; /* Set the height of your nav */
+}
 
 /* General Styles */
 .container {
