@@ -22,7 +22,7 @@ nav {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - var(--nav-height));
-    margin: 0;
+    margin-top: calc(0px - var(--nav-height));
     box-sizing: border-box;
 }
 
