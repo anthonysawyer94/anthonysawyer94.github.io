@@ -56,7 +56,6 @@ html {
     width: 100%;
     min-height: calc(100vh - var(--nav-height));
     margin-top: calc(-2* var(--nav-height));
-
 }
 
 h1 {
