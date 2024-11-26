@@ -109,9 +109,6 @@ h1 {
 .tile-1024 { background-color: #edc53f; color: #fff; }
 .tile-2048 { background-color: #edc22e; color: #fff; }
 
-.controls {
-    margin: 10px 0;
-}
 
 button {
     padding: 10px 20px;
