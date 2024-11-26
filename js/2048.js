@@ -214,7 +214,7 @@ function closeInstructions() {
     modal.style.display = 'none';
 }
 
-initializeBoard();
+restartGame();
 
 // Close the modal when clicking outside of it
 window.onclick = function(event) {
