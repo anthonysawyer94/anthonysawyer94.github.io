@@ -112,7 +112,7 @@ function restartGame() {
     isGameActive = true;
 }
 
-function checkGameOver() {
+async function checkGameOver() {
     let gameOver = true;
 
     for (let r = 0; r < boardSize; r++) {
@@ -137,7 +137,7 @@ function checkGameOver() {
             
             document.getElementById('status').textContent = 'Game Over!';
             console.log('Your Score', score);
-            const response = checkIfNewHiScore(score);
+            const response = await checkIfNewHiScore(score);
             console.log('this was the response:', response);
             //Check to see if player Got in the top 10 LeaderBoard
             if (checkIfNewHiScore(score)) {
@@ -299,7 +299,24 @@ function handleMove(direction) {
     checkGameOver();  // Check if the game is over
 }
 
-function checkIfNewHiScore(score) {
+async function checkIfNewHiScore(score) {
+    try{
+        const res = await fetch('2048-hi-score');
+        const data = await res.json();
+        let scores = [];
+        for(let i = 0; i < data.length; i ++) {
+            const s = Number(data[i].score);
+            scores.push(s);
+        }
+        const min = Math.min(...scores);
+        return score > min;
+    } catch(error) {
+        console.error('Error fetching high scores:', error);
+        return false;
+    }
+}
+
+/*async function checkIfNewHiScore(score) {
         fetch('2048-hi-score')
             .then(response => response.json())
             .then(data => {
@@ -313,6 +330,7 @@ function checkIfNewHiScore(score) {
         })
             .catch(error => console.error('Error fetching high scores:', error));
     }
+*/
 // Function to fetch high scores
 function fetchHighScores() {
     fetch('2048-hi-score')
