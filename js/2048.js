@@ -214,6 +214,8 @@ function closeInstructions() {
     modal.style.display = 'none';
 }
 
+initializeBoard();
+
 // Close the modal when clicking outside of it
 window.onclick = function(event) {
     const modal = document.getElementById('instructionsModal');
@@ -223,7 +225,6 @@ window.onclick = function(event) {
 }
 
 document.addEventListener('keydown', handleKeyPress);
-initializeBoard();
 
 function goBack() {
     window.location.href = 'games.html';
