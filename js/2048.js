@@ -116,9 +116,8 @@ function handleKeyPress(event) {
 function restartGame() {
     initializeBoard();
     const hiTable = document.getElementById('highScoresTable');
+    const toggle = document.getElementById('toggle');
     if (hiTable.style.display == 'none') {
-        toggle.textContent = 'Show High Scores';
-    } else {
         toggle.textContent = 'Show High Scores';
     }
     isGameActive = true;
