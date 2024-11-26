@@ -112,7 +112,7 @@ function restartGame() {
     isGameActive = true;
 }
 
-function checkGameOver() {
+async function checkGameOver() {
     let gameOver = true;
 
     for (let r = 0; r < boardSize; r++) {
@@ -131,13 +131,13 @@ function checkGameOver() {
             }
         }
     }
-
+    
     if (gameOver) {
         if (isGameActive) { // Check if the game is still active
             
             document.getElementById('status').textContent = 'Game Over!';
             console.log('Your Score', score);
-            const response = checkIfNewHiScore(score);
+            const response = await checkIfNewHiScore(score);
             console.log('this was the response:', response);
             //Check to see if player Got in the top 10 LeaderBoard
             if (checkIfNewHiScore(score)) {
@@ -299,7 +299,7 @@ function handleMove(direction) {
     checkGameOver();  // Check if the game is over
 }
 
-function checkIfNewHiScore(score) {
+async function checkIfNewHiScore(score) {
         fetch('2048-hi-score')
             .then(response => response.json())
             .then(data => {
