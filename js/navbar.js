@@ -1,12 +1,10 @@
+fetch('../navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar').innerHTML = data;
+  });
 
 document.addEventListener('DOMContentLoaded', function () {
-
-  fetch('../navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-    });
-
   // Projects Dropdown
   const projectsLink = document.getElementById('projects');
   const projectsContent = document.querySelector('.projects-content');
