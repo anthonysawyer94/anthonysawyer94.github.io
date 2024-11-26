@@ -230,27 +230,25 @@ window.onclick = function(event) {
     }
 }
 
-document.addEventListener('keydown', handleKeyPress);
-
-
-// Swipe functionality for touch devices
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('touchmove', handleTouchMove, false);
-
-let xDown = null;
-let yDown = null;
-
-function getTouches(evt) {
-    return evt.touches || evt.originalEvent.touches;
-}
-
-function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-}
-
 if (moveFunctions) {
+    document.addEventListener('keydown', handleKeyPress);
+
+    // Swipe functionality for touch devices
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchmove', handleTouchMove, false);
+
+    let xDown = null;
+    let yDown = null;
+
+    function getTouches(evt) {
+        return evt.touches || evt.originalEvent.touches;
+    }
+    function handleTouchStart(evt) {
+        const firstTouch = getTouches(evt)[0];
+        xDown = firstTouch.clientX;
+        yDown = firstTouch.clientY;
+    }
+
     function handleTouchMove(evt) {
         if (!xDown || !yDown) {
             return;
@@ -284,9 +282,7 @@ if (moveFunctions) {
         xDown = null;
         yDown = null;
     }
-}
 
-if (moveFunctions) {
     function handleMove(direction) {
         switch (direction) {
             case 'ArrowUp':
