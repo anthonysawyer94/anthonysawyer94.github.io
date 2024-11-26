@@ -118,6 +118,8 @@ function restartGame() {
     const hiTable = document.getElementById('highScoresTable');
     if (hiTable.style.display == 'none') {
         toggle.textContent = 'Show High Scores';
+    } else {
+        toggle.textContent = 'Show High Scores';
     }
     isGameActive = true;
 }
