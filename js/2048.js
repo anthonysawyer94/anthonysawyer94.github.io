@@ -138,7 +138,7 @@ async function checkGameOver() {
             document.getElementById('status').textContent = 'Game Over!';
             console.log('Your Score', score);
             const madeLeaderBoard = await checkIfNewHiScore(score);
-            console.log('this was the response:', response);
+            console.log('this was the response:', madeLeaderBoard);
             //Check to see if player Got in the top 10 LeaderBoard
             if (madeLeaderBoard) {
                 // Ask the user if they want to join the leaderboard
