@@ -163,7 +163,7 @@ button {
     flex-direction: column; /* Adjust as needed */
     margin-top: calc(-2* var(--nav-height));
     width: 50%;
-    margin-right: 5px;
+    padding: 5px;
 }
 
 table {
