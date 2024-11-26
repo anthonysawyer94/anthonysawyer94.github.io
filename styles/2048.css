@@ -116,11 +116,11 @@ button {
     font-size: 1em;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #333;
     color: #fff;
     width: 100%;
-    max-width: 200px;
+    max-width: 150px;
     box-sizing: border-box;
 }
 
