@@ -6,6 +6,7 @@ async function navload() {
 
 document.addEventListener('DOMContentLoaded', async function () {
   
+  // Make sure the navbar is fully loaded
   await navload();
 
   // Projects Dropdown

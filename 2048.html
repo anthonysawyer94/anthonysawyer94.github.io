@@ -6,80 +6,50 @@
     <title>2048 Game</title>
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/2048.css">
-    <script src="js/navdropdown.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/2048.js"></script>
 </head>
 <body>
-    <nav>
-        <div>
-          <a href="./" class="logo">Anthony Sawyer</a>
-        </div>
-        <div class="nav-items">
-          <a href="./">Home</a>
-  
-          <!-- Projects Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="projects">Projects</a>
-            <ul class="dropdown-content projects-content">
-              <li><a href="nba-viz">NBA Stats</a></li>
-              <li><a href="shop">Shop</a></li>
-              <li><a href="2048">2048 Game</a></li>
-              <li><a href="nbascores.html">Betting Odds</a></li>
-            </ul>
+  <div id="navbar"></div>
+  <div class="container">
+      <div class="game-container">
+          <h1>2048 Game</h1>
+          <div id="score">Score: 0</div>
+          <div id="board" class="board"></div>
+          <div class="controls">
+              <button onclick="restartGame()">Restart</button>
+              <button onclick="showInstructions()">Instructions</button>
+              <button id='toggle' onclick="toggleHighScore()">Show High Scores</button>
           </div>
+          <div id="status"></div>
+      </div>
   
-          <!-- Misc Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="misc">Misc</a>
-            <ul class="dropdown-content misc-content">
-              <li><a href="youtube">Videos</a></li>
-              <li><a href="about">About</a></li>
-              <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
-              <li><a href="kings">Kings Hype</a></li>
-            </ul>
+      <!-- High Scores Table -->
+      <div id="highScoresTable">
+          <h2>High Scores</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Rank</th>
+                      <th>Player</th>
+                      <th>Score</th>
+                  </tr>
+              </thead>
+              <tbody id="scoresBody">
+                  <!-- Scores will be populated here -->
+              </tbody>
+          </table>
+      </div>
+  
+      <!-- Instructions Modal -->
+      <div id="instructionsModal" class="modal">
+          <div class="modal-content">
+              <span class="close-button" onclick="closeInstructions()">&times;</span>
+              <h2>Instructions</h2>
+              <p>Use the arrow keys to move the tiles. Merge matching tiles to create new tiles with higher values. Reach 2048 to win!</p>
           </div>
-        </div>
-      </nav>
-    <div class="container">
-        <div class="game-container">
-            <h1>2048 Game</h1>
-            <div id="score">Score: 0</div>
-            <div id="board" class="board"></div>
-            <div class="controls">
-                <button onclick="restartGame()">Restart</button>
-                <button onclick="showInstructions()">Instructions</button>
-                <button id='toggle' onclick="toggleHighScore()">Show High Scores</button>
-            </div>
-            <div id="status"></div>
-        </div>
-    
-        <!-- High Scores Table -->
-        <div id="highScoresTable">
-            <h2>High Scores</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody id="scoresBody">
-                    <!-- Scores will be populated here -->
-                </tbody>
-            </table>
-        </div>
-    
-        <!-- Instructions Modal -->
-        <div id="instructionsModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button" onclick="closeInstructions()">&times;</span>
-                <h2>Instructions</h2>
-                <p>Use the arrow keys to move the tiles. Merge matching tiles to create new tiles with higher values. Reach 2048 to win!</p>
-            </div>
-        </div>
-    
-        <script src="js/2048.js"></script>
-    </div>
+      </div>
+  </div>
 
 </body>
 </html>
