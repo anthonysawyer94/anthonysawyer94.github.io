@@ -120,6 +120,8 @@ function restartGame() {
     console.log('syles', hiTable.style.display);
     if (hiTable.style.display == 'none') {
         toggle.textContent = 'Show High Scores';
+    } else {
+        toggleHighScore();
     }
     isGameActive = true;
 }
