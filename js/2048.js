@@ -215,6 +215,8 @@ function closeInstructions() {
 }
 
 restartGame();
+restartGame();
+restartGame();
 
 // Close the modal when clicking outside of it
 window.onclick = function(event) {
@@ -226,9 +228,6 @@ window.onclick = function(event) {
 
 document.addEventListener('keydown', handleKeyPress);
 
-function goBack() {
-    window.location.href = 'games.html';
-}
 
 // Swipe functionality for touch devices
 document.addEventListener('touchstart', handleTouchStart, false);
