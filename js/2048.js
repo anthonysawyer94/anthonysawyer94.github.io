@@ -7,6 +7,7 @@ function initializeBoard() {
     board = Array.from({ length: boardSize }, () => Array(boardSize).fill(null));
     score = 0; // Reset score when restarting
     document.getElementById('score').textContent = `Score: ${score}`;
+    document.getElementById('status').textContent = '';
     addRandomTile();
     addRandomTile();
     updateBoard();
