@@ -5,52 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball Game</title>
     <link rel="stylesheet" href="styles/basketball.css">
-    <script src="js/navdropdown.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/basketball.js"></script>
 </head>
 <body>
-    <nav>
-        <div>
-          <a href="./" class="logo">Anthony Sawyer</a>
-        </div>
-        <div class="nav-items">
-          <a href="./">Home</a>
-  
-          <!-- Projects Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="projects">Projects</a>
-            <ul class="dropdown-content projects-content">
-              <li><a href="nba-viz">NBA Stats</a></li>
-              <li><a href="shop">Shop</a></li>
-              <li><a href="2048">2048 Game</a></li>
-              <li><a href="nbascores.html">Betting Odds</a></li>
-            </ul>
+  <div id="navbar"></div>
+  <div class="game-container">
+      <h1>Basketball Game</h1>
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+      <div id="score">Score: 0</div>
+      <button onclick="restartGame()">Restart</button>
+      <div id="instructionsModal" class="modal">
+          <div class="modal-content">
+              <span class="close-button" onclick="closeInstructions()">&times;</span>
+              <h2>Instructions</h2>
+              <p>Use the space bar to shoot the basketball. Try to score as many points as possible!</p>
           </div>
-  
-          <!-- Misc Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="misc">Misc</a>
-            <ul class="dropdown-content misc-content">
-              <li><a href="youtube">Videos</a></li>
-              <li><a href="about">About</a></li>
-              <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
-              <li><a href="kings">Kings Hype</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <div class="game-container">
-        <h1>Basketball Game</h1>
-        <canvas id="gameCanvas" width="800" height="600"></canvas>
-        <div id="score">Score: 0</div>
-        <button onclick="restartGame()">Restart</button>
-        <div id="instructionsModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button" onclick="closeInstructions()">&times;</span>
-                <h2>Instructions</h2>
-                <p>Use the space bar to shoot the basketball. Try to score as many points as possible!</p>
-            </div>
-        </div>
-    </div>
-    <script src="js/basketball.js"></script>
+      </div>
+  </div>
 </body>
 </html>

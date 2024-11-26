@@ -6,67 +6,36 @@
     <title>Games</title>
     <link rel="stylesheet" href="styles/games.css">
     <link rel="stylesheet" href="styles/nav.css">
-    <script src="js/navdropdown.js" defer></script>
+    <script src="js/navbar.js" defer></script>
 </head>
 <body>
-    <nav>
-        <div>
-          <a href="./" class="logo">Anthony Sawyer</a>
-        </div>
-        <div class="nav-items">
-          <a href="./">Home</a>
-  
-          <!-- Projects Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="projects">Projects</a>
-            <ul class="dropdown-content projects-content">
-              <li><a href="nba-viz">NBA Stats</a></li>
-              <li><a href="shop">Shop</a></li>
-              <li><a href="2048">2048 Game</a></li>
-              <li><a href="nbascores.html">Betting Odds</a></li>
-            </ul>
+  <div id="navbar"></div>
+  <section>
+      <div class="games-container">
+          <h1>Play Some Fun Games!!</h1>
+          <div class="games-grid">
+              <a href="tictactoe" class="game-card">
+                  <div class="game-card-content">
+                      <h2>Tic Tac Toe</h2>
+                      <p>Play the classic game of Tic Tac Toe!</p>
+                  </div>
+              </a>
+              <a href="2048" class="game-card">
+                  <div class="game-card-content">
+                      <h2>2048</h2>
+                      <p>Play the classic game of 2048!</p>
+                  </div>
+              </a>
+              <a href="rock-paper-scissors" class="game-card">
+                  <div class="game-card-content">
+                      <h2>Rock-Paper-Scissors</h2>
+                      <p>JUST WIN!</p>
+                  </div>
+              </a>
+              <!-- Add more game cards as needed -->
           </div>
-  
-          <!-- Misc Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="misc">Misc</a>
-            <ul class="dropdown-content misc-content">
-              <li><a href="youtube">Videos</a></li>
-              <li><a href="about">About</a></li>
-              <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
-              <li><a href="kings">Kings Hype</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <section>
-        <div class="games-container">
-            <h1>Play Some Fun Games!!</h1>
-            <div class="games-grid">
-                <a href="tictactoe" class="game-card">
-                    <div class="game-card-content">
-                        <h2>Tic Tac Toe</h2>
-                        <p>Play the classic game of Tic Tac Toe!</p>
-                    </div>
-                </a>
-                <a href="2048" class="game-card">
-                    <div class="game-card-content">
-                        <h2>2048</h2>
-                        <p>Play the classic game of 2048!</p>
-                    </div>
-                </a>
-                <a href="rock-paper-scissors" class="game-card">
-                    <div class="game-card-content">
-                        <h2>Rock-Paper-Scissors</h2>
-                        <p>JUST WIN!</p>
-                    </div>
-                </a>
-                <!-- Add more game cards as needed -->
-            </div>
-        </div>
-
-
-    </section>
+      </div>
+  </section>
     
 </body>
 </html>

@@ -5,56 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles/tictactoe.css">
-    <script src="js/navdropdown.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/tictactoe.js"></script>
 </head>
 <body>
-    <nav>
-        <div>
-          <a href="./" class="logo">Anthony Sawyer</a>
-        </div>
-        <div class="nav-items">
-          <a href="./">Home</a>
-  
-          <!-- Projects Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="projects">Projects</a>
-            <ul class="dropdown-content projects-content">
-              <li><a href="nba-viz">NBA Stats</a></li>
-              <li><a href="shop">Shop</a></li>
-              <li><a href="2048">2048 Game</a></li>
-              <li><a href="nbascores.html">Betting Odds</a></li>
-            </ul>
-          </div>
-  
-          <!-- Misc Dropdown -->
-          <div class="dropdown">
-            <a href="#" id="misc">Misc</a>
-            <ul class="dropdown-content misc-content">
-              <li><a href="youtube">Videos</a></li>
-              <li><a href="about">About</a></li>
-              <li><a href="rock-paper-scissors">Rock Paper Scissors</a></li>
-              <li><a href="kings">Kings Hype</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-    <div class="game-container">
-        <h1>Tic Tac Toe</h1>
-        <div class="board">
-            <div class="cell" id="cell-0"></div>
-            <div class="cell" id="cell-1"></div>
-            <div class="cell" id="cell-2"></div>
-            <div class="cell" id="cell-3"></div>
-            <div class="cell" id="cell-4"></div>
-            <div class="cell" id="cell-5"></div>
-            <div class="cell" id="cell-6"></div>
-            <div class="cell" id="cell-7"></div>
-            <div class="cell" id="cell-8"></div>
-        </div>
-        <button id="restart">Restart Game</button>
-        <p id="status"></p>
-    </div>
-    <script src="js/tictactoe.js"></script>
+  <div id="navbar"></div>
+  <div class="game-container">
+      <h1>Tic Tac Toe</h1>
+      <div class="board">
+          <div class="cell" id="cell-0"></div>
+          <div class="cell" id="cell-1"></div>
+          <div class="cell" id="cell-2"></div>
+          <div class="cell" id="cell-3"></div>
+          <div class="cell" id="cell-4"></div>
+          <div class="cell" id="cell-5"></div>
+          <div class="cell" id="cell-6"></div>
+          <div class="cell" id="cell-7"></div>
+          <div class="cell" id="cell-8"></div>
+      </div>
+      <button id="restart">Restart Game</button>
+      <p id="status"></p>
+  </div>
 </body>
 </html>
