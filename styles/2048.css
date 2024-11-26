@@ -55,6 +55,8 @@ html {
     text-align: center;
     width: 100%;
     min-height: calc(100vh - var(--nav-height));
+    margin-top: calc(-2* var(--nav-height));
+
 }
 
 h1 {
@@ -181,4 +183,6 @@ button {
     justify-content: center; /* Adjust as needed */
     align-items: center; /* Adjust as needed */
     flex-direction: column; /* Adjust as needed */
+    margin-top: calc(-2* var(--nav-height));
+
 }
