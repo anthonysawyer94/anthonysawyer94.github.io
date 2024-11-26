@@ -136,41 +136,51 @@ function checkGameOver() {
         if (isGameActive) { // Check if the game is still active
             
             document.getElementById('status').textContent = 'Game Over!';
-            let playerName;
-            while (true) {
-                playerName = prompt("Enter your name to join LeaderBoard!");
-                if (playerName && playerName.trim() !== '') {
-                    break
-                } else {
-                    alert('Must Enter a Name')
+
+            //Check to see if player Got in the top 10 LeaderBoard
+            if (checkIfNewHiScore(score)) {
+                // Ask the user if they want to join the leaderboard
+                const wantsToJoin = confirm("You made the Leaderboard! Do you want to Enter your name?");
+                if (wantsToJoin) {
+                    let playerName;
+                    while (true) {
+                        playerName = prompt("Enter your name to join LeaderBoard!");
+                        if (playerName && playerName.trim() !== '') {
+                            break
+                        } else {
+                            alert('Must Enter a Name')
+                        }
+                    }
+                    
+                    const hiTable = document.getElementById('highScoresTable');
+                    hiTable.style.display = 'flex'; 
+                    const data = {
+                        player: playerName,
+                        score: score
+                    }
+        
+                    // Send the POST request to your PHP script
+                    fetch('2048-hi-score', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Display the response message
+                        //alert('worked' + JSON.stringify(data));
+                    })
+                    .catch(error => console.error('Error:', error));
+        
+                    isGameActive = false; // Set the game state to inactive
+                    setTimeout(() => {
+                        fetchHighScores();
+                      }, 100); 
                 }
-            }
-            
-            const hiTable = document.getElementById('highScoresTable');
-            hiTable.style.display = 'flex'; 
-            const data = {
-                player: playerName,
-                score: score
-            }
 
-            // Send the POST request to your PHP script
-            fetch('2048-hi-score', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Display the response message
-                //alert('worked' + JSON.stringify(data));
-            })
-            .catch(error => console.error('Error:', error));
-
-            isGameActive = false; // Set the game state to inactive
-            fetchHighScores();
-            fetchHighScores();
+            }
         }
     } else {
         document.getElementById('status').textContent = '';
@@ -287,6 +297,25 @@ function handleMove(direction) {
     checkGameOver();  // Check if the game is over
 }
 
+function checkIfNewHiScore(score) {
+        fetch('2048-hi-score')
+            .then(response => response.json())
+            .then(data => {
+            let scores = [];
+            for(let i = 0; i < data.length; i ++) {
+                console.log('hi', data[i]);
+                const s = Number(data[i].score);
+                scores.push(s);
+            }
+            const min = Math.min(...scores);
+            if (score > min) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+            .catch(error => console.error('Error fetching high scores:', error));
+    }
 // Function to fetch high scores
 function fetchHighScores() {
     fetch('2048-hi-score')
