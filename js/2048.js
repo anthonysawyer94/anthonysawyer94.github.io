@@ -145,7 +145,7 @@ async function checkGameOver() {
             document.getElementById('status').textContent = 'Game Over!';
             console.log('Your Score', score);
             const madeLeaderBoard = await checkIfNewHiScore(score);
-            console.log('this was the response:', madeLeaderBoard);
+            console.log('Made Leaderboard?:', madeLeaderBoard);
             //Check to see if player Got in the top 10 LeaderBoard
             if (madeLeaderBoard) {
                 // Ask the user if they want to join the leaderboard
@@ -319,21 +319,6 @@ async function checkIfNewHiScore(score) {
     }
 }
 
-/*async function checkIfNewHiScore(score) {
-        fetch('2048-hi-score')
-            .then(response => response.json())
-            .then(data => {
-            let scores = [];
-            for(let i = 0; i < data.length; i ++) {
-                const s = Number(data[i].score);
-                scores.push(s);
-            }
-            const min = Math.min(...scores);
-            return score > min;
-        })
-            .catch(error => console.error('Error fetching high scores:', error));
-    }
-*/
 // Function to fetch high scores
 function fetchHighScores() {
     fetch('2048-hi-score')
