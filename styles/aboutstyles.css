@@ -72,10 +72,10 @@ footer {
   }
   
   .social-logo.tableau-logo {
-    width: 60px;  /* Set the specific width for Tableau */
+    width: 80px;  /* Set the specific width for Tableau */
     height: auto;  /* Keep the aspect ratio intact */
   }
-  
+
   /* Add hover effect to logos */
   .social-logo:hover {
     transform: scale(1.1);  /* Slightly enlarge on hover */
