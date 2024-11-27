@@ -55,22 +55,36 @@ function scores() {
           const gameLocation = gameId.location;
           const teams = gameId.shortName;
           const startingOdds = gameId.odds.details;
+          const awayFav = gameId.odds.awayTeamOdds.favorite;
+          console.log('isawayfav', awayFav)
+          let color;
+          let altColor;
+          if (awayFav) {
+            color = gameId.competitors[0].color;
+            altColor = gameId.competitors[0].alternateColor;
+          } else {
+            color = gameId.competitors[1].color;
+            altColor = gameId.competitors[1].alternateColor;
+          }
 
           // Create container div (game)
           const newDiv = document.createElement('div');
           targetDiv2.appendChild(newDiv);
           newDiv.className = 'game';
+          newDiv.style.backgroundColor = `#${color}`;
 
           // Create teams div to display teams
           const teamNames = document.createElement('div');
           teamNames.className = 'team-names';
           teamNames.innerText = teams;
+          teamNames.style.color = `#${altColor}`
           newDiv.appendChild(teamNames)
 
           // Create odds div to show odds
           const odds = document.createElement('div');
           odds.className = 'odds';
           odds.innerText = startingOdds;
+          odds.style.color = `#${altColor}`
           newDiv.appendChild(odds);
 
 
