@@ -27,9 +27,11 @@
 
 .nfl {
     background-color: #1D428A;
+    color: #d50a0a;
 }
 .nba {
     background-color: #C8102E;
+    color: #1D428A;
 }      
 .game {
     display: flex;
