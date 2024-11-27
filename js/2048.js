@@ -165,9 +165,11 @@ async function checkGameOver() {
                     loadBadWords();
                     while (true) {
                         playerName = prompt("Enter your name to join LeaderBoard!");
-                        if (playerName && playerName.trim() !== '' && containsBadWords(playerName) !== true) {
+                        const badWord = containsBadWords(playerName);
+                        console.log('Is it a bad word?', badWord);
+                        if (playerName && playerName.trim() !== '' && badWord !== true) {
                             break
-                        } else if (containsBadWords(playerName)){
+                        } else if (badWord){
                             alert('No bad words potty mouth!');
                         } else {
                             alert('Must Enter a Name');
