@@ -55,8 +55,27 @@ footer {
 
 
 
-footer h2{
+footer h1{
     margin: auto;
     font-size: 12;
 
 }
+
+/* Container for social links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Space between logos */
+  }
+  
+  /* Styling for social logo images */
+  .social-logo {
+    width: 40px;  /* Adjust logo size */
+    height: auto;  /* Maintain aspect ratio */
+    transition: transform 0.3s ease;  /* Smooth transition for hover effect */
+  }
+  
+  /* Add hover effect to logos */
+  .social-logo:hover {
+    transform: scale(1.1);  /* Slightly enlarge on hover */
+  }
