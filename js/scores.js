@@ -19,6 +19,7 @@ function scores() {
           const teams = gameId.shortName;
           const startingOdds = gameId.odds.details;
           const awayFav = gameId.odds.awayTeamOdds.favorite;
+          console.log('isawayfav', awayFav)
           let color;
           if (awayFav) {
             color = gameId.competitors[0].color;
