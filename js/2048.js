@@ -4,7 +4,11 @@ let score = 0;
 let isGameActive = true; // Variable to track the game state
 let moveFunctions = true;
 
-const filter = new Filter();
+// URL to the JSON file with bad words hosted on jsDelivr
+const badWordsUrl = 'https://cdn.jsdelivr.net/npm/bad-words@3.0.4/lib/lang.json';
+
+// Load the list of bad words from the JSON file
+let badWords = [];
 
 console.log('filter', filter);
 document.addEventListener('DOMContentLoaded', () => {
@@ -159,12 +163,15 @@ async function checkGameOver() {
                 const wantsToJoin = confirm("You made the Leaderboard! Do you want to Enter your name?");
                 if (wantsToJoin) {
                     let playerName;
+                    loadBadWords();
                     while (true) {
                         playerName = prompt("Enter your name to join LeaderBoard!");
-                        if (playerName && playerName.trim() !== '') {
+                        if (playerName && playerName.trim() !== '' && containsBadWords(playerName) !== true) {
                             break
+                        } else if (containsBadWords(playerName)){
+                            alert('No bad words potty mouth!');
                         } else {
-                            alert('Must Enter a Name')
+                            alert('Must Enter a Name');
                         }
                     }
                     
@@ -347,5 +354,26 @@ function fetchHighScores() {
         .catch(error => console.error('Error fetching high scores:', error));
 }
 
+async function loadBadWords() {
+    try {
+      const response = await fetch(badWordsUrl);
+      badWords = await response.json();
+      console.log("Bad words loaded:", badWords);
+    } catch (error) {
+      console.error("Error loading bad words:", error);
+    }
+  }
 
+  // Function to check if the input text contains any bad words
+  function containsBadWords(inputText) {
+    const lowerCaseInput = inputText.toLowerCase();
+    
+    for (let word of badWords) {
+      if (lowerCaseInput.includes(word)) {
+        return true; // Found a bad word
+      }
+    }
+    
+    return false; // No bad words found
+  }
 
