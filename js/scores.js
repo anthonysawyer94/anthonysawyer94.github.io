@@ -18,11 +18,20 @@ function scores() {
           const gameLocation = gameId.location;
           const teams = gameId.shortName;
           const startingOdds = gameId.odds.details;
+          const awayFav = gameId.odds.awayTeamOdds.favorite;
+          let color;
+          if (awayFav) {
+            color = gameId.competitors[0].color;
+          } else {
+            color = gameId.competitors[1].color;
+          }
+
 
           // Create contiainer div (game)
           const newDiv = document.createElement('div');
-          targetDiv.appendChild(newDiv);
           newDiv.className = 'game';
+          newDiv.style.backgroundColor = color;
+          targetDiv.appendChild(newDiv);
 
           // Create teams div to display teams
           const teamNames = document.createElement('div');
