@@ -21,10 +21,13 @@ function scores() {
           const awayFav = gameId.odds.awayTeamOdds.favorite;
           console.log('isawayfav', awayFav)
           let color;
+          let altColor;
           if (awayFav) {
             color = gameId.competitors[0].color;
+            altColor = gameId.competitors[0].alternateColor;
           } else {
             color = gameId.competitors[1].color;
+            altColor = gameId.competitors[1].alternateColor;
           }
 
 
@@ -38,12 +41,14 @@ function scores() {
           const teamNames = document.createElement('div');
           teamNames.className = 'team-names';
           teamNames.innerText = teams;
+          teamNames.style.color = `#${altColor}`
           newDiv.appendChild(teamNames);
 
           // Create odds div to show odds
           const odds = document.createElement('div');
           odds.className = 'odds';
           odds.innerText = startingOdds;
+          odds.style.color = `#${altColor}`
           newDiv.appendChild(odds);
       });
       nflf.forEach(gameId => {
