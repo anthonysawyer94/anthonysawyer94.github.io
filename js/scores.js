@@ -31,7 +31,7 @@ function scores() {
           // Create contiainer div (game)
           const newDiv = document.createElement('div');
           newDiv.className = 'game';
-          newDiv.style.backgroundColor = color;
+          newDiv.style.backgroundColor = `#${color}`;
           targetDiv.appendChild(newDiv);
 
           // Create teams div to display teams
