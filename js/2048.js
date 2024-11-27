@@ -162,7 +162,7 @@ async function checkGameOver() {
                 const wantsToJoin = confirm("You made the Leaderboard! Do you want to Enter your name?");
                 if (wantsToJoin) {
                     let playerName;
-                    loadBadWords();
+                    await loadBadWords();
                     while (true) {
                         playerName = prompt("Enter your name to join LeaderBoard!");
                         const badWord = containsBadWords(playerName);
