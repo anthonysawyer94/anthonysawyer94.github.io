@@ -359,7 +359,7 @@ async function loadBadWords() {
     try {
       const response = await fetch(badWordsUrl);
       badWords = await response.json();
-      console.log("Bad words loaded:", badWords);
+      //console.log("Bad words loaded:", badWords); // These are all the bad words your mother won't like
     } catch (error) {
       console.error("Error loading bad words:", error);
     }
