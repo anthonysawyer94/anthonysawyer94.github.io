@@ -51,7 +51,6 @@ footer {
     align-items: center;
     padding: 1rem 2rem;
     background-color: #45C8E5;
-    width: 50%;
 }
 
 @media (max-width: 480px) { /* Target smartphones */
