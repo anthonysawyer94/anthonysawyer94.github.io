@@ -369,7 +369,7 @@ async function loadBadWords() {
   function containsBadWords(inputText) {
     const lowerCaseInput = inputText.toLowerCase();
     
-    for (let word of badWords) {
+    for (let word of badWords.words) {
       if (lowerCaseInput.includes(word)) {
         return true; // Found a bad word
       }
