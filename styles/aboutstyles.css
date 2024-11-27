@@ -71,6 +71,11 @@ footer {
     transition: transform 0.3s ease;  /* Smooth transition for hover effect */
   }
   
+  .social-logo.tableau-logo {
+    width: 60px;  /* Set the specific width for Tableau */
+    height: auto;  /* Keep the aspect ratio intact */
+  }
+  
   /* Add hover effect to logos */
   .social-logo:hover {
     transform: scale(1.1);  /* Slightly enlarge on hover */
