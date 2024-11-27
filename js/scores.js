@@ -40,16 +40,23 @@ function scores() {
           const gameLocation = gameId.location;
           const teams = gameId.shortName;
           const startingOdds = gameId.odds.details;
-          console.log('nfl', teams, startingOdds);
+
+          // Create container div (game)
           const newDiv = document.createElement('div');
           targetDiv2.appendChild(newDiv);
           newDiv.className = 'game';
-          newDiv.innerText = teams;
-          console.log('new div', newDiv);
+
+          // Create teams div to display teams
+          const teamNames = document.createElement('div');
+          teamNames.className = 'team-names';
+          teamNames.innerText = teams;
+          newDiv.appendChild(teamNames)
+
+          // Create odds div to show odds
           const odds = document.createElement('div');
-          newDiv.appendChild(odds);
           odds.className = 'odds';
           odds.innerText = startingOdds;
+          newDiv.appendChild(odds);
 
 
       });
