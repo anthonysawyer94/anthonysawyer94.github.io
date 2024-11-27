@@ -4,7 +4,7 @@ let score = 0;
 let isGameActive = true; // Variable to track the game state
 let moveFunctions = true;
 
-const filter = new ProfanityFilter();
+const filter = new Filter();
 
 console.log('filter', filter);
 document.addEventListener('DOMContentLoaded', () => {
