@@ -1,0 +1,51 @@
+.container {
+    border: 8px solid black; /* Just a standard border */
+    display: flex; /*  Display can be: flex, grid, or block, or none (to hide), also table?  */
+    justify-content: center; /* this is the is the horizontal positioning */
+    align-items: flex-start; /* This aligns the vertical positioning within the container/div  */
+    width: 80%;
+    box-sizing: border-box;
+    margin: auto; /* Centers the container in the center of the screen horizontally */
+  }
+  .scoreboard {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start; /* Center items vertically */
+    width: 50%;
+    height: 100%;
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    
+  }
+  .nfl {
+    background-color: rgb(0, 149, 255);
+  }
+  .nba {
+    background-color: rgb(255, 0, 0);
+  }      
+  .game {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 6000px; /* Limit the max width */
+    height: 200%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: black;
+    border-style: solid;
+
+  }
+
+  .odds {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; /* Ensure it takes up the full width */
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 100%;
+    }
+  }

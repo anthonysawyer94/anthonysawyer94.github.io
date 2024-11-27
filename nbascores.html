@@ -10,9 +10,10 @@
     <meta property="og:type" content="website">
     <title>Anthony Sawyer</title>
     <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/scores.css" />
     <link rel="icon" href="/favicon.png" type="image/png">
-    <script src="js/main.js" defer></script>
     <script src="js/navbar.js" defer></script>
+    <script src="js/scores.js" defer></script>
   </head>
   <body>
     <div id="navbar"></div>
@@ -23,113 +24,6 @@
       <div class="scoreboard nfl">
         NFL
       </div>
-    <style>
-      .container {
-        border: 8px solid black; /* Just a standard border */
-        display: flex; /*  Display can be: flex, grid, or block, or none (to hide), also table?  */
-        justify-content: center; /* this is the is the horizontal positioning */
-        align-items: flex-start; /* This aligns the vertical positioning within the container/div  */
-        width: 80%;
-        box-sizing: border-box;
-        margin: auto; /* Centers the container in the center of the screen horizontally */
-      }
-      .scoreboard {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        align-items: flex-start; /* Center items vertically */
-        width: 50%;
-        height: 100%;
-        padding: 20px; /* Add padding for spacing */
-        text-align: center;
-        
-      }
-      .nfl {
-        background-color: rgb(0, 149, 255);
-      }
-      .nba {
-        background-color: rgb(255, 0, 0);
-      }      
-      .game {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center; /* Center items vertically */
-        width: 100%; /* Full width for responsiveness */
-        max-width: 6000px; /* Limit the max width */
-        height: 200%;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-
-      .odds {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%; /* Ensure it takes up the full width */
-      }
-
-      @media screen and (max-width: 768px) {
-        .container {
-          width: 100%;
-        }
-      }
-    </style>
-
-
     </div>
-    
   <body>
-  <script>
-
-    function scores() {
-      const nbaAPI = 'https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?sport=basketball&league=nba&region=us&lang=en&contentorigin=espn&configuration=SITE_DEFAULT&platform=web&buyWindow=1m&showAirings=buy%2Clive%2Creplay&showZipLookup=true&tz=America%2FNew_York&postalCode=95973';
-      const nflAPI = 'https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?sport=football&league=nfl&region=us&lang=en&contentorigin=espn&configuration=SITE_DEFAULT&platform=web&buyWindow=1m&showAirings=buy%2Clive%2Creplay&showZipLookup=true&tz=America%2FNew_York&postalCode=95973'
-      return Promise.all([
-            fetch(nbaAPI).then(res => res.json()),
-            fetch(nflAPI).then(res => res.json())
-      ])
-
-    }
-    scores().then(([nba, nfl]) => {
-        const espn = nba.sports[0].leagues[0].events;
-        const nflf = nfl.sports[0].leagues[0].events;
-        console.log('nfl', nflf);
-        console.log(espn);
-        const targetDiv = document.getElementsByClassName("scoreboard nba")[0];
-        const targetDiv2 = document.getElementsByClassName('scoreboard nfl')[0];
-        espn.forEach(gameId => {
-            const gameLocation = gameId.location;
-            const teams = gameId.shortName;
-            const startingOdds = gameId.odds.details;
-            console.log('nba', teams, startingOdds);
-            const newDiv = document.createElement('div');
-            targetDiv.appendChild(newDiv);
-            newDiv.className = 'game';
-            newDiv.innerText = teams;
-            console.log('new div', newDiv);
-            const odds = document.createElement('div');
-            newDiv.appendChild(odds);
-            odds.className = 'odds';
-            odds.innerText = startingOdds;
-        });
-        nflf.forEach(gameId => {
-            const gameLocation = gameId.location;
-            const teams = gameId.shortName;
-            const startingOdds = gameId.odds.details;
-            console.log('nfl', teams, startingOdds);
-            const newDiv = document.createElement('div');
-            targetDiv2.appendChild(newDiv);
-            newDiv.className = 'game';
-            newDiv.innerText = teams;
-            console.log('new div', newDiv);
-            const odds = document.createElement('div');
-            newDiv.appendChild(odds);
-            odds.className = 'odds';
-            odds.innerText = startingOdds;
-
-
-        });
-    })
-    .catch(error => console.log('error', error));
-
-  </script>
 </html>
