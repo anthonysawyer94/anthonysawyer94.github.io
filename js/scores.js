@@ -11,23 +11,30 @@ function scores() {
       const espn = nba.sports[0].leagues[0].events;
       const nflf = nfl.sports[0].leagues[0].events;
       console.log('nfl', nflf);
-      console.log(espn);
+      console.log('nba', espn);
       const targetDiv = document.getElementsByClassName("scoreboard nba")[0];
       const targetDiv2 = document.getElementsByClassName('scoreboard nfl')[0];
       espn.forEach(gameId => {
           const gameLocation = gameId.location;
           const teams = gameId.shortName;
           const startingOdds = gameId.odds.details;
-          console.log('nba', teams, startingOdds);
+
+          // Create contiainer div (game)
           const newDiv = document.createElement('div');
           targetDiv.appendChild(newDiv);
           newDiv.className = 'game';
-          newDiv.innerText = teams;
-          console.log('new div', newDiv);
+
+          // Create teams div to display teams
+          const teamNames = document.createElement('div');
+          teamNames.className = 'team-names';
+          teamNames.innerText = teams;
+          newDiv.appendChild(teamNames);
+
+          // Create odds div to show odds
           const odds = document.createElement('div');
-          newDiv.appendChild(odds);
           odds.className = 'odds';
           odds.innerText = startingOdds;
+          newDiv.appendChild(odds);
       });
       nflf.forEach(gameId => {
           const gameLocation = gameId.location;
