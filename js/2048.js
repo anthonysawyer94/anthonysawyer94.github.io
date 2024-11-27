@@ -10,7 +10,6 @@ const badWordsUrl = 'https://cdn.jsdelivr.net/npm/bad-words@3.0.4/lib/lang.json'
 // Load the list of bad words from the JSON file
 let badWords = [];
 
-console.log('filter', filter);
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the game when the page is loaded
     initializeBoard();
