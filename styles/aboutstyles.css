@@ -40,7 +40,8 @@
     padding: 0 20px;
     text-align: left;
     text-indent: 2em;
-    width: 50%;
+    width: 75%;
+    max-width: 750px;
 
 }
 
