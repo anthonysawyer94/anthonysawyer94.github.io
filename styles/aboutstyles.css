@@ -8,41 +8,13 @@
 
 }
 
-.header-image {
-    width: 100%;
-    height: 100px; /* Adjust this height to your preference */
-    overflow: hidden; /* Hide overflow */
-    position: relative; /* Relative positioning for child elements */
-}
-
-.header-image img {
-    width: 100%; /* Full width */
-    height: 100%; /* Full height of the container */
-    object-fit: cover; /* Cover the container, cropping as needed */
-    object-position: 50% 85%; /* Center the image within the container */
-    display: block; /* Remove extra space below the image */
-    position: absolute; /* Absolute positioning */
-    top: 0; /* Align top */
-    left: 0; /* Align left */
-}
-
-
-.hero {
-    background: #BBC4C6;
-
-}
-
-
-.hero-container-project {
+.containter {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
 }
 
-.column-left {
+.aboutme {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,14 +25,14 @@
 
 }
 
-.column-left h1 {
+.aboutme h1 {
     margin-bottom: 1rem;
     font-size:3rem;
     margin-left: auto;
     margin-right: auto;
 }
 
-.column-left p {
+.aboutme p {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     line-height: 1.5;
@@ -69,25 +41,8 @@
 
 }
 
-button {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    border: none;
-    color: #BBC4C6;
-    background: #000;
-    cursor: pointer;
-    border-radius: 25px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-button:hover {
-    background: #45C8E5;
-    color:#000;
-
-}
-
-.column-right {
+footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -96,29 +51,8 @@ button:hover {
         background-color: #45C8E5;
 }
 
-.column-right h2{
+footer h2{
     margin: auto;
     font-size: 12;
 
-}
-
-.image1 {
-    width: 400px;
-    height: 300px;
-
-}
-
-.imageant {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 300px;
-    border-radius: 25px;
-    margin: auto;
-    padding-top: 1px
-}
-
-.imageant p {
-    text-align: center;
 }
