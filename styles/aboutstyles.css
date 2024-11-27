@@ -72,7 +72,7 @@ footer {
   }
   
   .social-logo.tableau-logo {
-    width: 80px;  /* Set the specific width for Tableau */
+    width: 130px;  /* Set the specific width for Tableau */
     height: auto;  /* Keep the aspect ratio intact */
   }
 
