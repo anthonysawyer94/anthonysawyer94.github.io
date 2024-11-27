@@ -49,17 +49,18 @@
       width: 90%;      /* Make it take more of the screen width */
       min-width: 200px; /* Further adjust for smaller devices */
     }
-  }
 
-
-footer {
+    footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 1rem 2rem;
         background-color: #45C8E5;
-}
+    }
+  }
+
+
 
 footer h2{
     margin: auto;
