@@ -50,7 +50,7 @@ h1 {
 #restart {
     padding: 10px 20px;
     font-size: 1em;
-    background: #4CAF50;
+    background: #000000;
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -59,7 +59,7 @@ h1 {
 }
 
 #restart:hover {
-    background: #45a049;
+    background: #8492c0;
 }
 
 #status {
