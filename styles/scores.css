@@ -20,9 +20,9 @@
 }
 
 .title {
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
-
+    padding-bottom: 10px;
 }
 
 .nfl {
