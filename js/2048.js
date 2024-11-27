@@ -4,6 +4,9 @@ let score = 0;
 let isGameActive = true; // Variable to track the game state
 let moveFunctions = true;
 
+const filter = new ProfanityFilter();
+
+console.log('filter', filter);
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize the game when the page is loaded
     initializeBoard();
