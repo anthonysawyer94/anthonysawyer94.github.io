@@ -35,12 +35,20 @@
 .aboutme p {
     margin-bottom: 1rem;
     font-size: 1.5rem;
-    line-height: 1.5;
-    padding: 15px;
+    line-height: 1.3;
+    padding: 0 20px;
     text-align: left;
     text-indent: 2em;
+    width: 25%;
 
 }
+
+@media (max-width: 480px) { /* Target smartphones */
+    p {
+      width: 90%;      /* Make it take more of the screen width */
+      min-width: 200px; /* Further adjust for smaller devices */
+    }
+  }
 
 
 footer {
