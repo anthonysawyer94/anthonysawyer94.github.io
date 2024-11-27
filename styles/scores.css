@@ -8,35 +8,40 @@
     margin: auto; /* Centers the container in the center of the screen horizontally */
 }
 .scoreboard {
-display: flex;
-justify-content: flex-start;
-flex-direction: column;
-align-items: center; /* Center items vertically */
-width: 50%;
-height: 100%;
-padding: 20px; /* Add padding for spacing */
-text-align: center;
-color: white;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    width: 50%;
+    height: 100%;
+    padding: 20px; /* Add padding for spacing */
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
 
 }
+
 .nfl {
-background-color: #1D428A;
+    background-color: #1D428A;
 }
 .nba {
-background-color: #878484;
+    background-color: #878484;
 }      
 .game {
-display: flex;
-justify-content: flex-start;
-align-items: center; /* Center items vertically */
-width: 100%; /* Full width for responsiveness */
-max-width: 6000px; /* Limit the max width */
-height: 200%;
-padding: 10px;
-box-sizing: border-box;
-border: black;
-border-style: solid;
-
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 6000px; /* Limit the max width */
+    height: 200%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: black;
+    border-style: solid;
 }
 
 .team-names {
