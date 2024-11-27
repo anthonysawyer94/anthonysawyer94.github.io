@@ -45,21 +45,17 @@
 }
 
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #45C8E5;
-}
-
-
-
-footer h1{
-    margin: auto;
-    font-size: 12;
-
-}
+    background-color: #f1f1f1;  /* Light gray background */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer h1 {
+    font-size: 1.8em;
+    color: #333;  /* Dark color for header */
+    margin-bottom: 15px;
+  }
+  
 
 /* Container for social links */
 .social-links {
