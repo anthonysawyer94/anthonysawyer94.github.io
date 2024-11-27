@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCell(cell, index) {
         board[index] = currentPlayer;
         cell.textContent = currentPlayer;
-        cell.style.color = currentPlayer === 'X' ? '#ff6347' : '#4682b4';
+        cell.style.color = currentPlayer === 'X' ? '#692ddd' : '#ff0060';
     }
 
     function checkForWinner() {
