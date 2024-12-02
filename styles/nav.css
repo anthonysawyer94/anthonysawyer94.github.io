@@ -16,11 +16,17 @@
   align-items: center;
   justify-content: center;
   height: var(--nav-height);
-  background-color: #3d95ce; 
-  color: white; 
+  padding: 10px;
+  background-color: white; 
+  color: #3d95ce; 
   border: none; 
   border-radius: 5px; 
   cursor: pointer;
+}
+
+#donate:hover {
+  color: white;
+  background-color: #3d95ce;
 }
 /* Prevent horizontal scrolling */
 html, body {
