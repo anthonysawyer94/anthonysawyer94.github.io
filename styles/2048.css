@@ -156,7 +156,7 @@ h1 {
 }
 
 /* Hide the high scores table initially */
-#highScoresTable {
+#highScoreTable {
     display: none;
     justify-content: center; /* Adjust as needed */
     align-items: center; /* Adjust as needed */
