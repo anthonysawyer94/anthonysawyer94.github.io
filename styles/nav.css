@@ -11,7 +11,7 @@
 
 }
 
-button {
+#donate {
   height: var(--nav-height);
   background-color: #3d95ce; 
   color: white; 
