@@ -211,7 +211,7 @@ async function checkGameOver() {
     }
 }
 function toggleHighScore() {
-    const scores = document.getElementById('highScoresTable');
+    const scores = document.getElementById('highScoreTable');
     const toggle = document.getElementById('toggle');
 
     if(scores.style.display === 'none') {
