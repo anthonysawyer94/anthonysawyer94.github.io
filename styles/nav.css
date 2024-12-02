@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: clac( var(--nav-height) / 1.2);
+  height: calc( var(--nav-height) / 1.2);
   padding: 10px;
   margin-left: 5px;
   background-color: #f5f5f5; 

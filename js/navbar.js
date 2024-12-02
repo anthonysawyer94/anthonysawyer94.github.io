@@ -44,8 +44,12 @@ document.addEventListener('DOMContentLoaded', async function () {
   // Venmo link
 
   function isMobile() {
-    // Regular expression to match common mobile devices
-    return /Mobi|Android|iPhone|iPad|iPod|Windows Phone|BlackBerry/i.test(navigator.userAgent);
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const platform = navigator.platform || "";
+
+    // Enhanced detection for mobile devices, especially iPhones
+    return /Mobi|Android|iPhone|iPad|iPod|Windows Phone|BlackBerry/i.test(userAgent) || 
+           /iPhone|iPad|iPod/.test(platform);
   }
 
   function handleVenmoLink() {
