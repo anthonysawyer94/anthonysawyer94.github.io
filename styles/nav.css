@@ -11,7 +11,7 @@
 
 }
 
-#donate {
+#venmo-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@
 
 }
 
-#donate:hover {
+#venmo-button:hover {
   color: white;
   background-color: #3d95ce;
 }
