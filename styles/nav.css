@@ -11,6 +11,15 @@
 
 }
 
+button {
+  height: var(--nav-height);
+  background-color: #3d95ce; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
 /* Prevent horizontal scrolling */
 html, body {
     overflow-x: hidden;
