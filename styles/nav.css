@@ -12,12 +12,14 @@
 }
 
 #donate {
+  display: flex;
   height: var(--nav-height);
   background-color: #3d95ce; 
   color: white; 
   border: none; 
   border-radius: 5px; 
   cursor: pointer;
+  align-items: center;
 }
 
 /* Prevent horizontal scrolling */

@@ -84,23 +84,6 @@
 
 }
 
-button {
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    border: none;
-    color: #BBC4C6;
-    background: #000;
-    cursor: pointer;
-    border-radius: 25px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-button:hover {
-    background: #45C8E5;
-    color:#000;
-}
-
 .image1 {
     width: 400px;
     height: 300px;
