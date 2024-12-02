@@ -176,7 +176,7 @@ async function checkGameOver() {
                         }
                     }
                     
-                    const hiTable = document.getElementById('highScoresTable');
+                    const hiTable = document.getElementById('highScoreTable');
                     hiTable.style.display = 'flex'; 
                     const data = {
                         player: playerName,
