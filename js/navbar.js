@@ -44,12 +44,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   // Venmo link
 
   function isMobile() {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const platform = navigator.platform || "";
+    const userAgent = navigator.userAgent || window.opera;
 
     // Enhanced detection for mobile devices, especially iPhones
-    return /Mobi|Android|iPhone|iPad|iPod|Windows Phone|BlackBerry/i.test(userAgent) || 
-           /iPhone|iPad|iPod/.test(platform);
+    return /Mobi|Android|iPhone|iPad|iPod|Windows Phone|BlackBerry/i.test(userAgent)
   }
 
   function handleVenmoLink() {
