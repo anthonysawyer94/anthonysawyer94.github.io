@@ -1,7 +1,10 @@
 <nav>
     <div>
       <a href="./" class="logo"></a>
-      <a href="venmo://paycharge?txn=pay&recipients=anthonysawyer" style="color: blue;">Donate</a>
+      <a href="venmo://paycharge?txn=pay&recipients=anthonysawyer" 
+        onclick= "if (!window.open('venmo://paycharge?txn=pay&recipients=anthonysawyer')) window.location.href='https://venmo.com/anthonysawyer';">
+        Donate via Venmo
+      </a>
     </div>
     <div class="nav-items">
       <a href="./">Home</a>
