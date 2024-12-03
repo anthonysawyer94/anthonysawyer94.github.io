@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function handleVenmoLink() {
       if (isMobile()) {
           // If on mobile, use the venmo:// URL scheme
+          alert('you are on a mobile device')
           //window.location.href = "venmo://paycharge?txn=pay&recipients=anthonysawyer";
           window.location.href = "https://venmo.com/anthonysawyer"; // just for now
       } else {
