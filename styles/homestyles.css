@@ -1,3 +1,8 @@
+/* Define the nav height variable */
+:root {
+    --nav-height: 28px; /* Set the height of your nav */
+  }
+
 /* Notes */
 
 * {
@@ -43,7 +48,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - var(--nav-height));
     overflow: hidden;
 }
 
