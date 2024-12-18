@@ -131,6 +131,7 @@ footer h1 {
   @media (max-width: 768px) {
     .imageant {
       width: 90%; /* Slightly smaller than full width for padding */
+      height: auto;
       margin: 0 auto; /* Ensures it stays centered */
     }
   }
