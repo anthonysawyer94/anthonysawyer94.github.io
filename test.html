@@ -93,6 +93,7 @@
       console.log(`Scrolling to section: ${sectionId}`); // Debug log
       const section = document.getElementById(sectionId);
       if (section) {
+        console.log('Ok', section)
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
