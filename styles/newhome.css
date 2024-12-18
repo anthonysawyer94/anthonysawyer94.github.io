@@ -1,0 +1,129 @@
+/* General Styles */
+* {
+    text-decoration: none;
+    color: inherit; /* Inherits the color from the parent element */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+  }
+
+.imageant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    border-radius: 25px;
+    margin: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.imageant p {
+    text-align: center;
+}
+
+
+.a {
+    text-decoration: none;
+}
+.hero {
+text-align: center;
+padding: 50px 20px;
+background: linear-gradient(to right, #00d6e1, #166cff);
+color: white;
+}
+
+.hero h1 {
+font-size: 2.5em;
+margin: 0 0 10px;
+}
+
+.hero h1 span {
+color: #000000;
+}
+
+.hero button {
+padding: 10px 20px;
+background: #000000;
+border: none;
+border-radius: 5px;
+color: white;
+font-size: 1em;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.hero p {
+    margin: 15px;
+}
+
+.hero button:hover {
+background: #24c1ff;
+color: black;
+}
+
+section {
+padding: 40px 20px;
+}
+
+h2 {
+text-align: center;
+color: #333;
+}
+
+.projects .project {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* Removes the underline */
+    
+}
+
+.project a h3 {
+    margin: 0; /* Optional: Ensures consistent spacing */
+  }
+
+footer {
+    background-color: #f1f1f1;  /* Light gray background */
+    padding: 20px;
+    text-align: center;
+  }
+  
+footer h1 {
+    font-size: 1.8em;
+    color: #333;  /* Dark color for header */
+    margin-bottom: 15px;
+}
+
+
+/* Container for social links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Space between logos */
+  }
+  
+  /* Styling for social logo images */
+  .social-logo {
+    width: 40px;  /* Adjust logo size */
+    height: auto;  /* Maintain aspect ratio */
+    transition: transform 0.3s ease;  /* Smooth transition for hover effect */
+  }
+  
+  .social-logo.tableau-logo {
+    width: 130px;  /* Set the specific width for Tableau */
+    height: auto;  /* Keep the aspect ratio intact */
+  }
+
+  /* Add hover effect to logos */
+  .social-logo:hover {
+    transform: scale(1.1);  /* Slightly enlarge on hover */
+  }
