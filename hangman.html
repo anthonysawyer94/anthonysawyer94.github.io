@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangman Game</title>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEQDJ1Q5VN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-CEQDJ1Q5VN');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Anthony Sawyer">
+    <meta property="og:description" content="Check Out What I've Done.">
+    <meta property="og:image" content="https://www.anthonyjsawyer.com/pictures/tenerifeselfie.png">
+    <meta property="og:url" content="https://www.anthonyjsawyer.com/">
+    <meta property="og:type" content="website">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <script src="js/navbar.js" defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -64,8 +81,9 @@
             background-color: #45a049;
         }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="navbar"></div>
     <div class="game-container">
         <h1>Hangman Game</h1>
         <div class="word-display"></div>
@@ -222,4 +240,3 @@
         startGame();
     </script>
 </body>
-</html>
