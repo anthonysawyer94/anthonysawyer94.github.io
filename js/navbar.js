@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   await navload();
 
   // Projects Dropdown
-  const projectsLink = document.getElementById('projects');
+  const projectsLink = document.getElementById('projects-nav');
   const projectsContent = document.querySelector('.projects-content');
 
   projectsLink.addEventListener('click', function (event) {
