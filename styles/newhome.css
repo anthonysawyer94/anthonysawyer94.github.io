@@ -127,3 +127,10 @@ footer h1 {
   .social-logo:hover {
     transform: scale(1.1);  /* Slightly enlarge on hover */
   }
+
+  @media (max-width: 768px) {
+    .imageant {
+      width: 90%; /* Slightly smaller than full width for padding */
+      margin: 0 auto; /* Ensures it stays centered */
+    }
+  }

@@ -90,6 +90,7 @@
   <script>
     // Smooth scroll to a section
     function scrollToSection(sectionId) {
+      console.log(`Scrolling to section: ${sectionId}`); // Debug log
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
