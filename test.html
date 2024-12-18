@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthony's Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    header .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    header .nav-links li {
+      margin: 0 10px;
+    }
+
+    header .nav-links a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    header .nav-links a:hover {
+      color: #ffa500;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin: 0 0 10px;
+    }
+
+    .hero h1 span {
+      color: #ffa500;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      background: #ffa500;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero button:hover {
+      background: #ff8800;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .projects .project {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+    }
+
+    footer a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Anthony's Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <section class="hero">
+    <h1>Hi, I'm <span>Anthony</span></h1>
+    <p>Data Analyst & Web Developer specializing in creating data-driven solutions.</p>
+    <button onclick="scrollToSection('projects')">View My Projects</button>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm passionate about turning data into actionable insights. Experienced in Power BI, APIs, and automation, I bring creative solutions to complex problems.</p>
+    <p><strong>Skills:</strong> Python, Tableau, JavaScript, Power BI, APIs</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Weather Visualization Dashboard</h3>
+      <p>A live weather dashboard built using APIs and Power BI.</p>
+    </div>
+    <div class="project">
+      <h3>Automated Ticket Management System</h3>
+      <p>Integrated Zendesk APIs to streamline ticket processing, improving efficiency by 25%.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: anthony@example.com</p>
+    <p>GitHub: <a href="https://github.com" target="_blank">github.com/anthony</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com" target="_blank">linkedin.com/in/anthony</a></p>
+  </footer>
+
+  <script>
+    // Smooth scroll to a section
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+</body>
+</html>
