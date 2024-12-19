@@ -48,15 +48,15 @@ function getLocation() {
                 const { latitude, longitude } = position.coords; // Destructure coords
                 getWeather(latitude, longitude);
                 const lang = navigator.language;
-                console.log('lang:', lang);
+                //console.log('lang:', lang);
                 const cookies = navigator.cookieEnabled;
-                console.log('cookies:', cookies);
-                console.log('Position Data', position);
+                //console.log('cookies:', cookies);
+                //console.log('Position Data', position);
                 navigator.getBattery().then(function(battery) {
-                    console.log("Battery Level: " + battery.level * 100 + "%");
-                    console.log("Charging: " + (battery.charging ? "Yes" : "No"));
-                    console.log("Charging Time: " + battery.chargingTime + " seconds");
-                    console.log("Discharging Time: " + battery.dischargingTime + " seconds");
+                    //console.log("Battery Level: " + battery.level * 100 + "%");
+                    //console.log("Charging: " + (battery.charging ? "Yes" : "No"));
+                    //console.log("Charging Time: " + battery.chargingTime + " seconds");
+                    //console.log("Discharging Time: " + battery.dischargingTime + " seconds");
                 });
             },
             (error) => {
