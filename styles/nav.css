@@ -30,7 +30,8 @@
   color: white;
   background-color: #3d95ce;
 }
- Prevent horizontal scrolling 
+
+/* Prevent horizontal scrolling */ 
 html, body {
     overflow-x: hidden;
     margin: 0; /* Ensure no body margin is causing scrolling */
