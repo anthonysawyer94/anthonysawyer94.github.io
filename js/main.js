@@ -10,6 +10,6 @@ fetch(url)
             //console.log(player[2]);
         //})
 
-        console.log('NBA Scoring Leaders', nbaData);
+        //console.log('NBA Scoring Leaders', nbaData);
 
     })

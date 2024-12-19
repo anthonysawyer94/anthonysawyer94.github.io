@@ -30,5 +30,5 @@ const cookies = '_gcl_au=1.1.775463092.1721855561; _cb=DiA3t5Dk_E3hJ8Q6S; _fbp=f
 
         //console.log('Points Leaders: ', pointsLeaders);
         //console.log('Advanced Leaders: ', advancedLeaders)
-        console.log('ff: ', ffdata);
+        //console.log('ff: ', ffdata);
     });
